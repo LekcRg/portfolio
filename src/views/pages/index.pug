@@ -1,6 +1,23 @@
 extends ../auth.layout.pug
+include ../_mixins.pug
 
 block content
-  .hello-world
-    +icon('check', 'hello-world__block')
-    .inlined-svg
+	.wrapper.welcome
+		.welcome__block
+			.welcome__photo(style='background-image: url(../../assets/images/man_photo.jpg)')
+			h1.welcome__name Владимир Астахов
+			h2.welcome__about Личный сайт веб разработчика
+			ul.welcome__social
+				li.social__item
+					a.social__link(href='#')
+						+icon('vk', 'social-icons')
+				li.social__item
+					a.social__link(href='#')
+						+icon('github', 'social-icons')
+				li.social__item
+					a.social__link(href='#')
+						+icon('in', 'social-icons')
+			+nav('navigation', [['Мои работы', '/works'], ['Обо мне', '/about'], ['Блог', '/blog']])
+		footer.welcome__footer
+			span.footer__text © Владимир Астахов | создано с любовью в LoftSchool | 2016
+		a.button.welcome__button(href='#') Авторизоваться
