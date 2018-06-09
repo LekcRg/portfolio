@@ -3,20 +3,31 @@ block variables
 
 doctype html
 html(lang="ru")
-  head
-    meta(charset="utf-8")
-    meta(content="ie=edge" http-equiv="x-ua-compatible")
-    meta(content="width=device-width, initial-scale=1" name="viewport")
-    
-    title Portfolio | #{title}
-    link(rel='stylesheet' href='main.min.css')
-  body
-    .wrapper
-      .maincontent
-        block content
+	head
+		meta(charset="utf-8")
+		meta(content="ie=edge" http-equiv="x-ua-compatible")
+		meta(content="width=device-width, initial-scale=1" name="viewport")
+		
+		title Portfolio | #{title}
+		link(rel='stylesheet' href='main.min.css')
+	body
+		.wrapper
+			.hero(class=heroClass)
+				header.header 
+					.header__social
+						+social('hero-social')
+					.header__menu
+						a(href='#').hamburger__btn
+				.hero__content
+					.welcome__photo.hero__photo(style='background-image: url(../../assets/images/man_photo.jpg)')
+					block heroContant
 
-      include ./common/footer.pug
 
-    script(src='bootloader.bundle.js')
-    script(src='vendor.bundle.js')
-    block scripts
+			.maincontent
+				block content
+
+			include ./common/footer.pug
+
+		script(src='bootloader.bundle.js')
+		script(src='vendor.bundle.js')
+		block scripts

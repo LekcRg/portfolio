@@ -22,6 +22,10 @@ body {
   width: 95%;
 }
 
+.maincontant {
+  max-width: 1200px;
+}
+
 button {
   border: 0;
   cursor: pointer;
@@ -59,4 +63,39 @@ p {
     background-color: $green-hover;
     border-color: $green-hover;
   }
+}
+
+.social {
+  &__icon, &__link {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  &__item {
+    display: inline-block;
+  }
+  &__link {
+    display: block;
+  }
+}
+
+.title-strip {
+  position: relative;
+  &::after {
+    content: '';
+    width: 90px;
+    height: 3px;
+    position: absolute;
+    background: $black;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+.small-title {
+  text-align: center;
+  font-family: 'Sansus';
+  font-size: 34px;
+  text-transform: uppercase;
 }

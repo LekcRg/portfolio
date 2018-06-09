@@ -1,10 +1,38 @@
 extends ../main.layout.pug
 
 block variables
-  - var title = 'Обо мне'
+	- var title = 'Обо мне'
+	- var heroClass = 'about__hero'
+	- var contacts = [['skype', 'skype_kdn'], ['envelope', 'astahov@gmail.com'], ['phone', '+7 931 200 93 24'], ['map_marker', 'Новосибирск, ул. Инская, д.14']]
 
 block scripts
-  script(src='about.bundle.js')
+	script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCXIVThty_Dr68eaXDBqZzl_SVZRuYjznw&callback=initMap' async defer)
+	script(src='about.bundle.js')
+
+block heroContant
+	h1.about__name Владимир Астахов
+	h2.about__site Личный сайт веб разработчика
+	a.go-down(href='#')
 
 block content
-  h1 Страничка "Обо Мне"  
+	section.about
+		.about-left
+			h2.about-left__title.title-strip Обо мне
+			.about-left__wrapper 
+				+image('man-big-photo.jpg', 'avatar', 'about-left__img')
+				h3.about-left__small-title.small-title.title-strip Кто я
+				p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+				p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+		.about-right
+			.about-right__text-wrapper
+				h3.about-right__title.small-title.title-strip Чем я могу быть вам полезен
+				p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+	section.contacts
+		.contacts-block
+			h3.contacts__title.small-title.title-strip Контакты
+			.contact__list-wrapper
+				ul.contacts__list
+				each contact in contacts
+					li.contacts__item
+						+icon(contact[0], 'contacts__icon')
+						span.contacts__text #{contact[1]}

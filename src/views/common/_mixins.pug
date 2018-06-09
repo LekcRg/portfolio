@@ -1,6 +1,22 @@
+-var socialNetworks= [['vk', 'https://vk.com'], ['github', 'https://github.com'], ['in', 'https://linkedin.com']]
+
 mixin icon(iconName, iconClass)
-  svg(class=`${iconClass}`)
-    use(xlink:href=`/assets/images/icons/sprite.svg#${iconName}`)
+	svg(class=`${iconClass}`)
+		use(xlink:href=`/assets/images/icons/sprite.svg#${iconName}`)
 
 mixin image(imagePath, imageAlt, imageClass)
-  img(src=`/assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+	img(src=`/assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+
+mixin nav(className, items)
+	nav(class=className + '__wrapper')
+		ul(class=className)
+			each item in items
+				li(class=className +'__item')
+					a(class=className + '__link', href=item[1]) #{item[0]}
+
+mixin social(socialClass)
+	ul.social(class=socialClass + '-wrapper')
+		each icon in socialNetworks
+			li.social__item(class=socialClass + '__item')
+				a.social__link(href=icon[1], class=socialClass + '__link')
+					+icon(icon[0], 'social__icon ' + socialClass)
