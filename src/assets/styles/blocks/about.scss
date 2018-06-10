@@ -1,6 +1,12 @@
 .about {
 	display: flex;
 	position: relative;
+	&__bg-left {
+		fill: #ebefe2!important;
+	}
+	&__bg-right {
+		fill: #f4f5f0!important;
+	}
 	&__hero {
 		height: 600px;
 		position: relative;

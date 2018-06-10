@@ -7,12 +7,15 @@ mixin icon(iconName, iconClass)
 mixin image(imagePath, imageAlt, imageClass)
 	img(src=`/assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
 
-mixin nav(className, items)
+mixin nav(className, items, active)
 	nav(class=className + '__wrapper')
 		ul(class=className)
-			each item in items
+			each item, index in items
 				li(class=className +'__item')
-					a(class=className + '__link', href=item[1]) #{item[0]}
+					if index === active
+						a(class=className + '__link ' + className +'__active', href=item[1]) #{item[0]}
+					else
+						a(class=className + '__link ', href=item[1]) #{item[0]}
 
 mixin social(socialClass)
 	ul.social(class=socialClass + '-wrapper')
