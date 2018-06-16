@@ -1,7 +1,6 @@
 .blog {
 	width: 100%;
 	position: relative;
-	background: $black;
 	background: #faf8f0;
 	display: flex;
 	padding-top: 50px;
@@ -74,7 +73,7 @@
 				}
 			}
 		}
-		&__active {
+		&__link-active {
 			color: $green;
 			&::after {
 				content: '';
@@ -100,7 +99,7 @@
 			font-family: 'Sansus';
 			font-size: 35px;
 		}
-		& span {
+		& .blog-post__date {
 			display: block;
 			color: $green;
 			margin: 15px 0 20px 0;

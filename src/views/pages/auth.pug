@@ -1,0 +1,30 @@
+extends ../auth.layout.pug
+
+block content
+	h1.auth__title.title-strip Авторизируйтесь
+	form.login-form
+		label.auth__label
+			div.auth__icon.auth__login-icon
+			input.auth__input(type="text" placeholder='Логин' name='login')
+		label.auth__label
+			div.auth__icon.auth__password-icon
+			input.auth__input(type="password" placeholder='Пароль' name='pass')
+		label.auth__label
+			input.auth__input-checkbox(type='checkbox' name='captcha')
+			.auth__checkbox
+			span.auth__text Я человек
+		.radio__row
+			label.auth__label
+				input.auth__input-radio(type="radio" name='radio-captcha' value='yes')
+				div.auth__radio
+				span.text Да
+			label.auth__label
+				input.auth__input-radio(type="radio" name='radio-captcha' value='no')
+				div.auth__radio
+				span.auth__text Не уверен
+	nav.navigation__wrapper
+		ul.navigation
+			li.navigation__item
+				a.navigation__link(href="#") Главная
+			li.navigation__item
+				button.navigation__button Войти

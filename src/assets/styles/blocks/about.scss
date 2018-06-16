@@ -125,7 +125,7 @@
 	align-items: center;
 	background: url(./assets/images/map.jpg) no-repeat center;
 	background-size: cover;
-	&-block {
+	&__card {
 		width: 380px;
 		background: rgba(#f4f5f0, .85);
 		color: $black;
@@ -135,7 +135,7 @@
 	&__title::after {
 		bottom: -10px;
 	}
-	.contact__list-wrapper {
+	.contacts__list-wrapper {
 		margin-top: 30px;
 	}
 	&__icon {

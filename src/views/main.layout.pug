@@ -16,14 +16,14 @@ html(lang="ru")
 				header.header 
 					.header__social
 						+social('hero-social')
-					.header__menu
-						a(href='#').hamburger__btn
+					.header__btn-wrapper
+						button(href='#').hamburger__btn
 				.hero__content
-					.welcome__photo.hero__photo(style='background-image: url(../../assets/images/man_photo.jpg)')
+					.hero__photo(style='background-image: url(../../assets/images/man_photo.jpg)')
 					block heroContant
 
 
-			.maincontent
+			main.maincontent
 				.bg-triangles
 					svg.bg-triangle(viewBox="0 0 100 100" preserveAspectRatio="none" class=bg + '-left')
 						polygon(points="0 100, 100 100, 0 0")

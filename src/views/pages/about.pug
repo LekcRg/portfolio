@@ -17,14 +17,14 @@ block scripts
 	script(src='about.bundle.js')
 
 block heroContant
-	h1.about__name Владимир Астахов
+	h3.about__name Владимир Астахов
 	h2.about__site Личный сайт веб разработчика
 	a.go-down(href='#')
 
 block content
 	section.about
 		.about-left
-			h2.about-left__title.title-strip Обо мне
+			h1.about-left__title.title-strip Обо мне
 			.about-left__wrapper 
 				+image('man-big-photo.jpg', 'avatar', 'about-left__img')
 				h3.about-left__small-title.small-title.title-strip Кто я
@@ -48,11 +48,11 @@ block content
 								span.skills__circle-text #{skillText}
 
 	section.contacts
-		.contacts-block
+		.contacts__card
 			h3.contacts__title.small-title.title-strip Контакты
-			.contact__list-wrapper
+			.contacts__list-wrapper
 				ul.contacts__list
-				each contact in contacts
-					li.contacts__item
-						+icon(contact[0], 'contacts__icon')
-						span.contacts__text #{contact[1]}
+					each contact in contacts
+						li.contacts__item
+							+icon(contact[0], 'contacts__icon')
+							span.contacts__text #{contact[1]}

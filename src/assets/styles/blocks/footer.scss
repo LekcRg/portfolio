@@ -40,23 +40,24 @@
 	&__quote {
 		font-weight: 300;
 		font-style: italic;
-		opacity: .5;
+		padding: 0;
+		margin: 0;
+		color: rgba(#fff, .5);
 	}
 	&__sad {
-		font-weight: 500;
-		opacity: .5;
+		font-weight: 600;
 		font-style: italic;
 		&::before {
 			content: '— ';
 		}
 	}
 }
-.fnav {
+.footer-nav {
 
 	&__item {
 		display: inline-block;
-		margin-left: 35px;
-		&:first-child {
+		margin-right: 35px;
+		&:last-child {
 			margin-left: 0;
 		}
 	}
@@ -65,4 +66,7 @@
 		text-decoration: none;
 		font-weight: 500;
 	}
+}
+.footer__text {
+	font-size: 16px;
 }
