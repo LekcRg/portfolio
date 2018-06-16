@@ -1,0 +1,106 @@
+.welcome {
+	background: url(./assets/images/bg-welcome.jpg) no-repeat center;
+	background-size: cover;
+	display: flex;
+	&__block {
+		background: rgba(#122620, .6);
+		width: 380px;
+		border-radius: 5px;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: center;
+		color: #fff;
+	}
+	&__name {
+		font-weight: 500;
+		font-size: 28px;
+		margin-bottom: 10px;
+	}
+	&__about {
+		font-weight: 400;
+		font-size: 16px;
+	}
+	&__photo {
+		width: 141px;
+		height: 141px;
+		border-radius: 50%;
+		background-size: cover;
+		background: no-repeat center;
+		margin: 40px 0 25px 0;
+	}
+
+	&__footer {
+		position: absolute;
+		bottom: 0;
+		color: #fff;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 35px;
+	}
+	&__button {
+  	position: absolute;
+		right: 99px;
+		top: 24px;
+		background: transparent;
+	}
+	&-social {
+		margin: 30px 0;
+		&__icon {
+			fill: rgba(#fff, .5);
+			height: 22px;
+			max-width: 31px;
+			transition: fill .4s ease;
+		}
+		&__icon, &__link {
+			max-height: 22px;
+			max-width: 26px;
+		}
+		&:hover {
+			fill: $green-hover;
+		}
+		&__item {
+			display: inline-block;
+			margin-left: 25px;
+			&:first-child {
+				margin-left: 0;
+			} 
+		}
+	}
+}
+
+.navigation {
+	width: 100%;
+	&__list {
+		display: flex;
+	}
+	&__item {
+		border-left: 2px solid rgba(#fff, .6);
+		display: block;
+		flex-basis: auto;
+		flex-grow: 1;
+		text-align: center;
+		&:first-child {
+			border-left: none;
+		}
+		&:first-child .navigation__link {
+			border-radius: 0 0 0 5px;
+		}
+		&:last-child .navigation__link {
+			border-radius: 0 0 5px 0;
+		}
+	}
+	&__link {
+		color: #fff;
+		font-size: 16px;
+		text-decoration: none; 
+		display: block;
+		background-color: $green;
+		padding: 15px 0;
+		transition: background .4s ease;
+		&:hover {
+			background: $green-hover;
+		}
+	}
+}

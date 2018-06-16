@@ -1,0 +1,90 @@
+.hero {
+	background: url(./assets/images/bg-welcome.jpg) no-repeat center;
+	background-size: cover;
+	width: 100%;
+	min-height: 400px;
+	z-index: 0;
+	&__content {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+	&__photo {
+		margin: 70px 0 30px 0;
+		width: 141px;
+		height: 141px;
+		border-radius: 50%;
+		background-size: cover;
+		background: no-repeat center;
+	}
+	&-social {
+
+		&__icon {
+			fill: #fff;
+			transition: fill .4s ease;
+		}
+		&:hover {
+			fill: $green-hover;
+		}
+		&__icon, &__link {
+			max-height: 22px;
+			max-width: 31px;
+		}
+		&__item {
+			margin-left: 20px;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+}
+.header {
+	height: 36px;
+	padding: 0 30px;
+	padding-top: 28px;
+	display: flex;
+	&__btn-wrapper {
+		margin-left: auto;
+	}
+}
+.hamburger__btn {
+	display: block;
+	background: #fff;
+	width: 40px;
+	height: 5px;
+	border-radius: 5px;
+	position: relative;
+	&::before {
+		content: '';
+		background: #fff;
+		width: 40px;
+		height: 5px;
+		border-radius: 5px;
+		position: absolute;
+		top: 10px;
+		left: 0;right: 0;
+	}
+	&::after {
+		content: '';
+		background: #fff;
+		width: 40px;
+		height: 5px;
+		border-radius: 5px;
+		position: absolute;
+		bottom: 10px;
+		left: 0;right: 0;
+	}
+}
+
+.bg-triangles {
+	width: 100%;
+	display: flex;
+	position: absolute;
+	top: -100px;
+	z-index: 0;
+}
+.bg-triangle {
+	width: 50%;
+	height: 100px;
+	fill: #faf8f0;
+}

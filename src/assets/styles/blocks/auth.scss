@@ -1,0 +1,116 @@
+.auth__title {
+	text-transform: uppercase;
+	font-family: 'Sansus';
+	font-size: 35px;
+	margin-top: 35px;
+	margin-bottom: 45px;
+	&::after {
+		background: #fff;
+		bottom: -15px;
+	}
+}
+.auth__label {
+	width: 85%;
+	display: flex;
+	margin-bottom: 20px;
+	align-items: center;
+	justify-content: center;
+}
+.auth__input {
+	width: 100%;
+	height: 45px;
+	border: none;
+	padding-left: 18px;
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+	outline: 0;
+	outline-offset: 0;
+}
+.auth__icon {
+	height: 45px;
+	width: 45px;
+	border-top-left-radius: 25px;
+	border-bottom-left-radius: 25px;
+}
+.auth__login-icon {
+	background: svg-load('login.svg', fill='#c4cbcd') #f0efe9 no-repeat center;
+}
+.auth__password-icon {
+	background: svg-load('password.svg', fill='#c4cbcd') #f0efe9 no-repeat center;
+}
+.auth__input-checkbox {
+	display: none;
+	&:checked + .auth__checkbox {
+		background: svg-load('check.svg', fill='#fff') $green no-repeat center;
+		background-size: 70%;
+	}
+}
+.auth__checkbox {
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	cursor: pointer;
+	transition: background .4s ease;
+}
+.auth__text {
+	cursor: pointer;
+	white-space: nowrap;
+}
+.radio__row {
+	display: flex;
+	justify-content: center;
+	margin-left: -30px;
+}
+.auth__input-radio {
+	display: none;
+	&:checked + .auth__radio::before {
+		background: $green;
+	}
+}
+.auth__radio {
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+	margin-right: 10px;
+	margin-left: 30px;
+	cursor: pointer;
+	&::before {
+		content: '';
+		width: 8px;
+		height: 8px;
+		background: transparent;
+		position: absolute;
+		top: 0;left: 0;right: 0;bottom: 0;
+		margin: auto;
+		border-radius: 50%;
+		transition: background .4s ease;
+	}
+}
+.login-form {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.navigation__button {
+	color: #fff;
+	font-size: 16px;
+	text-decoration: none; 
+	display: block;
+	background-color: $green;
+	padding: 15px 0;
+	transition: background .4s ease;
+	outline: 0;
+	outline-offset: 0;
+	width: 100%;
+	height: 100%;
+	&:hover {
+		background: $green-hover;
+	}
+}
