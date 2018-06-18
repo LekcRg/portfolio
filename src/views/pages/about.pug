@@ -2,7 +2,7 @@ extends ../main.layout.pug
 
 block variables
 	- var title = 'Обо мне'
-	- var heroClass = 'about__hero'
+	- var heroClass = 'hero-default'
 	- var contacts = [['skype', 'skype_kdn'], ['envelope', 'astahov@gmail.com'], ['phone', '+7 931 200 93 24'], ['map_marker', 'Новосибирск, ул. Инская, д.14']]
 	- 
 		var skills = [
@@ -17,9 +17,7 @@ block scripts
 	script(src='about.bundle.js')
 
 block heroContant
-	h3.about__name Владимир Астахов
-	h2.about__site Личный сайт веб разработчика
-	a.go-down(href='#')
+	include ../common/hero-content.pug
 
 block content
 	section.about
