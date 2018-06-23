@@ -10,23 +10,11 @@
 
 
 }
-.go-down {
-	display: block;
-	height: 16px;
-	width: 26px;
-	transition: all .4s ease;
-	background-image: svg-load('arrow_down.svg', fill=rgba(#fff, .85));
-	position: absolute;
-	bottom: 70px;
-	&:hover {
-		background-image: svg-load('arrow_down.svg', fill=#fff);
-	}
-}
-.about-left, .about-right {
+.about__left, .about__right {
 	width: 50%;
 	position: relative;
 }
-.about-left {
+.about__left {
 	background-color: #ebefe2;
 	padding: 0 85px;
 	display: flex;
@@ -34,7 +22,7 @@
 	align-items: center;
 	color: $black;
 	padding-bottom: 30px;
-	&__title {
+	&--title {
 		font-family: 'Sansus';
 		font-size: 63px;
 		text-align: center;
@@ -56,39 +44,40 @@
 			z-index: -1;
 		}
 	}
-	&__small-title {
+	&--small-title {
 		margin-bottom: 35px;
 		&::after {
 			bottom: -10px;
 		}
 	}
-	&__wrapper {
+	&--wrapper {
 		margin-top: 30px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		max-width: 450px;
 		& p {
 			color: $grey;
 			margin-top: 15px;
 		}
 	}
-	&__img {
+	&--img {
 		max-width: 500px;
 		text-align: center;
 		margin-bottom: 25px;
 	}
 }
-.about-right {
+.about__right {
 	background-color: #f4f5f0;
 	padding: 0 35px;
-	&__text-wrapper {
+	&--text-wrapper {
 		color: $grey;
 		& p {
 			margin-top: 30px;
 			margin-bottom: 55px;
 		}
 	}
-	&__title {
+	&--title {
 		margin-top: 20px;
 		&::after {
 			bottom: -10px;
@@ -104,6 +93,16 @@
 	align-items: center;
 	background: url(./assets/images/map.jpg) no-repeat center;
 	background-size: cover;
+
+	&__link {
+		color: $black;
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+		transition: border-bottom .4s ease;
+		&:hover {
+			border-bottom: 1px solid $black;
+		}
+	}
 	&__card {
 		width: 380px;
 		background: rgba(#f4f5f0, .85);

@@ -15,13 +15,13 @@ html(lang="ru")
 			.hero(class=heroClass)
 				header.header 
 					.header__social
-						+social('hero-social')
+						+social
 					.header__btn-wrapper
-						button(href='#').hamburger__btn
+						button(type='button').hamburger__btn
+							.hamburger__btn--lines
 				.hero__content
 					.hero__photo(style='background-image: url(../../assets/images/man_photo.jpg)')
 					block heroContant
-
 
 			main.maincontent
 				.bg-triangles

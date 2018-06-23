@@ -22,31 +22,34 @@ block content
 			.works-slider__img-container
 				img(src="./../../assets/images/work-1.png", alt="work-1").works-slider__img
 			.works-slider__buttons
-				.works-slider__button.works-slider__prev(style='background-image: url(../../assets/images/work-2.png)')
-				.works-slider__button.works-slider__next(style='background-image: url(../../assets/images/work-3.png)')
+				button.works-slider__button.works-slider__prev(style='background-image: url(../../assets/images/work-2.png)')
+				button.works-slider__button.works-slider__next(style='background-image: url(../../assets/images/work-3.png)')
+		
 		.works-about
 			h2.works__title.works-about__title.title-strip Что обо мне говорят
 			.works-about__comment
-				.works-about__comment-container
+				blockquote.works-about__comment-container
 					.works-about__avatar(style='background-image: url(../../assets/images/comment-avatar1.jpg)')
 					p.works-about__comment--text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-					h4.works-about__name Ковальчук Дмитрий
+					cite.works-about__name Ковальчук Дмитрий
 					span.works-about__who основатель Loftschool
-				.works-about__comment-container
+
+				blockquote.works-about__comment-container
 					.works-about__avatar(style='background-image: url(../../assets/images/comment-avatar2.jpg)')
 					p.works-about__comment--text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-					h4.works-about__name Сабанцев Владимир
+					cite.works-about__name Сабанцев Владимир
 					span.works-about__who преподаватель
+			
 			.works-about__contact
-				.works-about__contact--card
+				form.works-about__contact--card
 					h3.works-about__small-title.title-strip Связаться со мной
 					input(type="text", name="name", placeholder='Имя').works-about__input
 					input(type="text", name="mail", placeholder='Email').works-about__input
 					textarea(name="message", placeholder='Ваше сообщение').works-about__textarea
-					nav.navigation
-						ul.navigation__list
-							li.navigation__item
-								button.navigation__button Отправить
-							li.navigation__item
-								button.navigation__button Очистить
+					.works-about__contact--btn-wrapper
+						ul.works-about__contact--btn-list
+							li.works-about__contact--btn-item
+								button.works-about__contact--btn(type='submit') Отправить
+							li.works-about__contact--btn-item
+								button.works-about__contact--btn(type='reset') Очистить
 				a.go-up(href='#')

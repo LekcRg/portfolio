@@ -66,15 +66,23 @@ p {
 }
 
 .social {
+  &__icon {
+    fill: #fff;
+    transition: fill .4s ease;
+    &:hover {
+      fill: $green-hover;
+    }
+  }
   &__icon, &__link {
-    max-width: 100%;
-    max-height: 100%;
+    max-height: 22px;
+    max-width: 31px;
   }
   &__item {
+    margin-left: 20px;
     display: inline-block;
-  }
-  &__link {
-    display: block;
+    &:first-child {
+      margin-left: 0;
+    }
   }
 }
 

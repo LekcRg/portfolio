@@ -1,9 +1,15 @@
 .hero {
-	background: url(./assets/images/bg-welcome.jpg) no-repeat center;
-	background-size: cover;
 	width: 100%;
 	min-height: 400px;
-	z-index: 0;
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;left: 0;bottom: 0;right: 0;
+		background: url(./assets/images/bg-welcome.jpg) no-repeat center;
+		background-size: cover;
+		z-index: -1;
+	}
 	&__name {
 		font-size: 35px;
 		font-weight: 500;
@@ -16,6 +22,7 @@
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		z-index: 999;
 	}
 	&__photo {
 		margin: 70px 0 30px 0;
@@ -69,31 +76,30 @@
 	}
 }
 .hamburger__btn {
-	display: block;
-	background: #fff;
+	background: transparent;
+	padding: 0;
 	width: 40px;
-	height: 5px;
-	border-radius: 5px;
+	height: 35px;
+}
+.hamburger__btn--lines {
+	display: block;
 	position: relative;
-	&::before {
-		content: '';
+	&, &::before, &::after {
 		background: #fff;
 		width: 40px;
 		height: 5px;
 		border-radius: 5px;
-		position: absolute;
+	}
+	&::before {
 		top: 10px;
+	}
+	&::before, &::after {
+		content: '';
+		position: absolute;
 		left: 0;right: 0;
 	}
 	&::after {
-		content: '';
-		background: #fff;
-		width: 40px;
-		height: 5px;
-		border-radius: 5px;
-		position: absolute;
 		bottom: 10px;
-		left: 0;right: 0;
 	}
 }
 
@@ -108,4 +114,18 @@
 	width: 50%;
 	height: 100px;
 	fill: #faf8f0;
+}
+
+.go-down {
+	display: block;
+	height: 16px;
+	width: 26px;
+	transition: all .4s ease;
+	background-image: svg-load('arrow_down.svg', fill=rgba(#fff, .85));
+	position: absolute;
+  bottom: 70px;
+  z-index: 10;
+	&:hover {
+		background-image: svg-load('arrow_down.svg', fill=#fff);
+	}
 }

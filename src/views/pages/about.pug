@@ -3,11 +3,19 @@ extends ../main.layout.pug
 block variables
 	- var title = 'Обо мне'
 	- var heroClass = 'hero-default'
-	- var contacts = [['skype', 'skype_kdn'], ['envelope', 'astahov@gmail.com'], ['phone', '+7 931 200 93 24'], ['map_marker', 'Новосибирск, ул. Инская, д.14']]
-	- 
-		var skills = [
-			[['Frontend'], ['HTML5', 'CSS3', 'JavaScript & jQuery']], 
-			[['Backend'], ['PHP', 'mySQl', 'Node.js & npm', 'Mongo.db']], 
+	-
+		var contacts =
+		[
+			['skype', 'skype_kdn', 'skype:skype_kdn?userinfo'],
+			['envelope', 'mail@slow.im', 'mailto:mail@slow.im'],
+			['phone', '+7 931 200 93 24', 'tel: +79312009324'],
+			['map_marker', 'Новосибирск, ул. Инская, д.14']
+		]
+	-
+		var skills =
+		[
+			[['Frontend'], ['HTML5', 'CSS3', 'JavaScript & jQuery']],
+			[['Backend'], ['PHP', 'mySQl', 'Node.js & npm', 'Mongo.db']],
 			[['WorkFlow'], ['Git', 'Gulp', 'Bower']]
 		]
 	- var bg = 'about__bg'
@@ -21,16 +29,16 @@ block heroContant
 
 block content
 	section.about
-		.about-left
-			h1.about-left__title.title-strip Обо мне
-			.about-left__wrapper 
-				+image('man-big-photo.jpg', 'avatar', 'about-left__img')
-				h3.about-left__small-title.small-title.title-strip Кто я
+		.about__left
+			h1.about__left--title.title-strip Обо мне
+			.about__left--wrapper 
+				+image('man-big-photo.jpg', 'avatar', 'about__left--img')
+				h3.about__left--small-title.small-title.title-strip Кто я
 				p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
 				p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
-		.about-right
-			.about-right__text-wrapper
-				h3.about-right__title.small-title.title-strip Чем я могу быть вам полезен
+		.about__right
+			.about__right--text-wrapper
+				h3.about__right--title.small-title.title-strip Чем я могу быть вам полезен
 				p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
 
 			.skills
@@ -53,4 +61,7 @@ block content
 					each contact in contacts
 						li.contacts__item
 							+icon(contact[0], 'contacts__icon')
-							span.contacts__text #{contact[1]}
+							if contact[2] != undefind
+								a(href=contact[2]).contacts__link #{contact[1]}
+							else
+								span.contacts__text #{contact[1]}

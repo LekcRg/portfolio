@@ -45,22 +45,22 @@
 		top: 24px;
 		background: transparent;
 	}
-	&-social {
+	&__social {
 		margin: 30px 0;
-		&__icon {
+		&--icon {
 			fill: rgba(#fff, .5);
 			height: 22px;
 			max-width: 31px;
 			transition: fill .4s ease;
 		}
-		&__icon, &__link {
+		&--icon, &--link {
 			max-height: 22px;
 			max-width: 26px;
 		}
 		&:hover {
 			fill: $green-hover;
 		}
-		&__item {
+		&--item {
 			display: inline-block;
 			margin-left: 25px;
 			&:first-child {

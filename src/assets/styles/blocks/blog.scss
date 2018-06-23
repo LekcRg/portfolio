@@ -95,14 +95,17 @@
 
 	&-post {
 
+		&__header {
+			margin-bottom: 20px;
+		}
 		& h2{
 			font-family: 'Sansus';
 			font-size: 35px;
+			margin-bottom: 10px;
 		}
 		& .blog-post__date {
 			display: block;
 			color: $green;
-			margin: 15px 0 20px 0;
 		}
 		& p {
 			margin-bottom: 20px;

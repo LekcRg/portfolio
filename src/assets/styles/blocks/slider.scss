@@ -31,12 +31,14 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: contain;
+		outline: none;
 		&::before {
 			content: '';
 			width: 100%;
 			height: 100%;
 			position: absolute;
 			background-color: rgba(#b0b7aa, .7);
+			top: 0;left: 0;right: 0;bottom: 0;
 		}
 	}
 	&__prev {
