@@ -6,6 +6,9 @@
 	padding-top: 50px;
 	padding-bottom: 182px;
 	margin-bottom: 40px;
+	@media screen and (max-width: $tablet) {
+		padding-bottom: 400px;
+	}
 	&__title {
 		color: #fff;
 		font-size: 63px;
@@ -37,6 +40,10 @@
 	}
 	&__aside {
 		width: 25%;
+		@media screen and (max-width: $tablet) {
+			overflow: hidden;
+			width: 0;
+		}
 	}
 	&-nav {
 		&__link {
@@ -89,8 +96,12 @@
 	}
 	&__news {
 		width: 75%;
-		padding: 0 8%;
+		padding: 0 4%;
 		color: $black;
+		@media screen and (max-width: $tablet) {
+			width: 100%;
+
+		}
 	}
 
 	&-post {
@@ -124,4 +135,15 @@
 			display: none;
 		}
 	}
+}
+.blog__nav {
+	width: 60px;
+	height: 60px;
+	background: $green;
+	position: fixed;
+	z-index: 999;
+	left: -45px;
+	top: 50vh;
+	border-radius: 50%;
+	box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
 }

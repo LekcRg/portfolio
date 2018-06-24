@@ -1,5 +1,8 @@
 .skills {
 	
+	&__row {
+		margin-right: -30px;
+	}
 	&__title {
 		color: $grey;
 		font-size: 28px;
@@ -20,9 +23,6 @@
 			position: relative;
 			display: inline-block;
 			margin-right: 35px;
-			&:last-child {
-				margin-right: 0;
-			}
 		}
 		&_under {
 			stroke: #dfdcd5;

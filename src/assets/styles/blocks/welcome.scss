@@ -2,6 +2,10 @@
 	background: url(./assets/images/bg-welcome.jpg) no-repeat center;
 	background-size: cover;
 	display: flex;
+	position: relative;
+	@media screen and (max-width: $phone) {
+		padding: 0 2%;
+	}
 	&__block {
 		background: rgba(#122620, .6);
 		width: 380px;
@@ -44,6 +48,11 @@
 		right: 99px;
 		top: 24px;
 		background: transparent;
+		@media screen and (max-width: $phone) {
+			left: auto; right: auto;
+			display: block;
+			margin: auto;
+		}
 	}
 	&__social {
 		margin: 30px 0;
