@@ -1,0 +1,26 @@
+@function rem($px){
+  @return $px / 16px + 0rem;
+}
+
+@mixin big {
+  @media screen and (max-width: $big) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: $phones) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+@mixin small {
+  @media screen and (max-width: $small) {
+    @content;
+  }
+}

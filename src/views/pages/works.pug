@@ -1,0 +1,55 @@
+extends ../main.layout.pug
+
+block variables
+	- var title = 'Мои работы'
+	- var heroClass = 'hero-default'
+	- var bg = 'portfolio__bg'
+
+block scripts
+
+block heroContant
+	include ../common/hero-content.pug
+
+block content 
+	section.works
+		.works__title-container
+			h1.works__title.title-strip Мои работы
+		.works-slider
+			.works-slider__left
+				h2.works-slider__title.title-strip Сайт школы онлайн Образования
+				h3.works-slider__used HTML , CSS, JAVASCRIPT
+				a.works-slider__button-link(href='#') Посмотреть сайт
+			.works-slider__img-container
+				img(src="./../../assets/images/work-1.png", alt="work-1").works-slider__img
+			.works-slider__buttons
+				button.works-slider__button.works-slider__prev(style='background-image: url(../../assets/images/work-2.png)')
+				button.works-slider__button.works-slider__next(style='background-image: url(../../assets/images/work-3.png)')
+		
+		.works-about
+			h2.works__title.works-about__title.title-strip Что обо мне говорят
+			.works-about__comment
+				blockquote.works-about__comment-container
+					.works-about__avatar(style='background-image: url(../../assets/images/comment-avatar1.jpg)')
+					p.works-about__comment--text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+					cite.works-about__name Ковальчук Дмитрий
+					span.works-about__who основатель Loftschool
+
+				blockquote.works-about__comment-container
+					.works-about__avatar(style='background-image: url(../../assets/images/comment-avatar2.jpg)')
+					p.works-about__comment--text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+					cite.works-about__name Сабанцев Владимир
+					span.works-about__who преподаватель
+			
+			.works-about__contact
+				form.works-about__contact--card
+					h3.works-about__small-title.title-strip Связаться со мной
+					input(type="text", name="name", placeholder='Имя').works-about__input
+					input(type="text", name="mail", placeholder='Email').works-about__input
+					textarea(name="message", placeholder='Ваше сообщение').works-about__textarea
+					.works-about__contact--btn-wrapper
+						ul.works-about__contact--btn-list
+							li.works-about__contact--btn-item
+								button.works-about__contact--btn(type='submit') Отправить
+							li.works-about__contact--btn-item
+								button.works-about__contact--btn(type='reset') Очистить
+				a.go-up(href='#')

@@ -1,6 +1,10 @@
 extends ../auth.layout.pug
 
 block content
-  .hello-world
-    +icon('check', 'hello-world__block')
-    .inlined-svg
+	.welcome__photo(style='background-image: url(../../assets/images/man_photo.jpg)')
+	h1.welcome__name Владимир Астахов
+	h2.welcome__about Личный сайт веб разработчика
+	+social('welcome__social')
+	+nav('navigation', [['Мои работы', '/works.html'], ['Обо мне', '/about.html'], ['Блог', '/blog.html']])
+	
+	button.button.welcome__button(onClick='location.href="/auth.html"') Авторизоваться

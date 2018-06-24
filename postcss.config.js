@@ -8,6 +8,26 @@ module.exports = {
       browsers: ["last 2 versions"],
       cascade: false
     }),
+    require("postcss-pxtorem")({
+      propList:
+        [
+          'font',
+          'font-size',
+          'line-height',
+          'letter-spacing',
+          'padding',
+          'padding-bottom',
+          'padding-top',
+          'padding-left',
+          'padding-right',
+          'margin',
+          'margin-top',
+          'margin-bottom',
+          'margin-left',
+          'margin-right'
+        ],
+      minPixelValue: 6
+    }),
     require("postcss-advanced-variables")({
       variables: require("./src/assets/styles/variables")
     }),

@@ -3,20 +3,36 @@ block variables
 
 doctype html
 html(lang="ru")
-  head
-    meta(charset="utf-8")
-    meta(content="ie=edge" http-equiv="x-ua-compatible")
-    meta(content="width=device-width, initial-scale=1" name="viewport")
-    
-    title Portfolio | #{title}
-    link(rel='stylesheet' href='main.min.css')
-  body
-    .wrapper
-      .maincontent
-        block content
+	head
+		meta(charset="utf-8")
+		meta(content="ie=edge" http-equiv="x-ua-compatible")
+		meta(content="width=device-width, initial-scale=1" name="viewport")
+		
+		title Portfolio | #{title}
+		link(rel='stylesheet' href='main.min.css')
+	body
+		.wrapper
+			.hero(class=heroClass)
+				header.header 
+					.header__social
+						+social
+					.header__btn-wrapper
+						button(type='button').hamburger__btn
+							.hamburger__btn--lines
+				.hero__content
+					.hero__photo(style='background-image: url(../../assets/images/man_photo.jpg)')
+					block heroContant
 
-      include ./common/footer.pug
+			main.maincontent
+				.bg-triangles
+					svg.bg-triangle(viewBox="0 0 100 100" preserveAspectRatio="none" class=bg + '-left')
+						polygon(points="0 100, 100 100, 0 0")
+					svg.bg-triangle(viewBox="0 0 100 100" preserveAspectRatio="none" class=bg + '-right')
+						polygon(points="0,100 100,0 100,100")
+				block content
 
-    script(src='bootloader.bundle.js')
-    script(src='vendor.bundle.js')
-    block scripts
+			include ./common/footer.pug
+
+		script(src='bootloader.bundle.js')
+		script(src='vendor.bundle.js')
+		block scripts
