@@ -1,12 +1,21 @@
 .welcome {
-	background: url(./assets/images/bg-welcome.jpg) no-repeat center;
+	background: transparent;
 	background-size: cover;
 	display: flex;
 	position: relative;
+	perspective: 600px;
+	justify-content: center;
+	align-items: center;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;left: 0;right: 0;bottom: 0;
+		background: linear-gradient(135deg, rgba(0, 0, 0, .5), transparent 50%, rgba(0, 0, 0, .5));
+	}
 	@media screen and (max-width: $phone) {
 		padding: 0 2%;
 	}
-	&__block {
+	&__card {
 		background: rgba(#122620, .6);
 		width: 380px;
 		border-radius: 5px;
@@ -16,6 +25,25 @@
 		flex-wrap: wrap;
 		align-items: center;
 		color: #fff;
+		transform-style: preserve-3d;
+		transition: transform .4s ease;
+		backface-visibility: hidden;
+		position: absolute;
+		&--back {
+			transform: rotateY(180deg);
+			position: absolute;
+		}
+		&--flipped {
+			& .welcome__card--front{
+				transform: rotateY(180deg);
+			}
+			& .welcome__card--back{
+				transform: rotateY(360deg);
+			}
+			& .welcome__button {
+				opacity: 0;
+			}
+		}
 	}
 	&__name {
 		font-weight: 500;
@@ -44,10 +72,11 @@
 		margin-bottom: 35px;
 	}
 	&__button {
-  	position: absolute;
+		position: absolute;
 		right: 99px;
 		top: 24px;
 		background: transparent;
+		transition: opacity .4s ease, background .4s ease, border .4s ease;
 		@media screen and (max-width: $phone) {
 			left: auto; right: auto;
 			display: block;

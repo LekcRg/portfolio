@@ -21,7 +21,7 @@ block variables
 	- var bg = 'about__bg'
 
 block scripts
-	script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCXIVThty_Dr68eaXDBqZzl_SVZRuYjznw&callback=initMap' async defer)
+	//- script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCXIVThty_Dr68eaXDBqZzl_SVZRuYjznw&callback=initMap' async defer)
 	script(src='about.bundle.js')
 
 block heroContant
@@ -40,18 +40,7 @@ block content
 			.about__right--text-wrapper
 				h3.about__right--title.small-title.title-strip Чем я могу быть вам полезен
 				p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-
-			.skills
-				each skill in skills
-					.skills__row
-						.skills__title-wrapper
-							h4.skills__title #{skill[0]}
-						each skillText in skill[1]
-							figure.skills__circle-wrapper
-								svg.skills__circle(viewBox="0 0 100 100" preserveAspectRatio="none")
-									circle(cx="50" cy="50" r="40").skills__circle.skills__circle_under
-									circle(cx="50" cy="50" r="40").skills__circle.skills__circle_above
-								span.skills__circle-text #{skillText}
+				#skills-container
 
 	section.contacts
 		.contacts__card

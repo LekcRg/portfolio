@@ -30,7 +30,7 @@
 		&_above {
 			stroke: $green;
 			stroke-dasharray: 251;
-			stroke-dashoffset: 50;
+			stroke-dashoffset: 251;
 			transition-delay: .1s;
 			transition: stroke-dasharray 1s ease;
 		}
@@ -49,5 +49,12 @@
 			padding: 5px;
 			text-align: center;
 		}
+	}
+}
+.skills__list {
+	display: flex;
+	flex-wrap: wrap;
+	@media screen and (max-width: $tablet) {
+		justify-content: center;
 	}
 }

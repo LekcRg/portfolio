@@ -35,6 +35,7 @@ block variables
 		]
 
 block scripts
+	script(src='blog.bundle.js')
 
 block heroContant
 	h1.blog__title.title-strip Блог
@@ -42,6 +43,7 @@ block heroContant
 
 block content
 	section.blog
+		h2.visually-hidden Блог
 		aside.blog__aside
 			button.blog__nav
 			+nav('blog-nav', blogNav, 0)
