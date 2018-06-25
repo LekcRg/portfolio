@@ -6,6 +6,7 @@ html {
   @media screen and (max-width: $tablet) {
     font-size: 14px;
   }
+  scroll-behavior: smooth;
 }
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
@@ -14,7 +15,6 @@ body {
   color: $text-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 .wrapper {

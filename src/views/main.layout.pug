@@ -24,7 +24,7 @@ html(lang="ru")
 					.hero__photo(style='background-image: url(../../assets/images/man_photo.jpg)')
 					block heroContant
 
-			main.maincontent
+			main.maincontent#go-here
 				.bg-triangles
 					svg.bg-triangle(viewBox="0 0 100 100" preserveAspectRatio="none" class=bg + '-left')
 						polygon(points="0 100, 100 100, 0 0")
@@ -35,6 +35,13 @@ html(lang="ru")
 			include ./common/footer.pug
 
 		include ./components/entry.pug
+
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.min.js")
+		script
+			.
+				// скорее всего это не работает =(
+				import smoothscroll from '../assets/scripts/modules/smoothscroll.min';
+				smoothscroll.polyfill();
 
 		script(src='bootloader.bundle.js')
 		script(src='vendor.bundle.js')
