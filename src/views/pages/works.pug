@@ -18,7 +18,7 @@ block content
 		.works-slider
 			.works-slider__left
 				h2.works-slider__title.title-strip Сайт школы онлайн Образования
-				h3.works-slider__used HTML , CSS, JAVASCRIPT
+				span.works-slider__used HTML , CSS, JAVASCRIPT
 				a.works-slider__button-link(href='#') Посмотреть сайт
 
 			.works-slider__img-container
@@ -28,31 +28,35 @@ block content
 				button.works-slider__button.works-slider__prev(style='background-image: url(../../assets/images/work-2.png)')
 				button.works-slider__button.works-slider__next(style='background-image: url(../../assets/images/work-3.png)')
 		
-		.works-about
-			h2.works__title.works-about__title.title-strip Что обо мне говорят
-			.works-about__comment
-				blockquote.works-about__comment-container
-					.works-about__avatar(style='background-image: url(../../assets/images/comment-avatar1.jpg)')
-					p.works-about__comment--text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-					cite.works-about__name Ковальчук Дмитрий
-					span.works-about__who основатель Loftschool
+	.works-about
+		h2.works__title.works-about__title.title-strip Что обо мне говорят
+		.works-about__comment
+			blockquote.works-about__comment-container
+				.works-about__avatar(style='background-image: url(../../assets/images/comment-avatar1.jpg)')
+				p.works-about__comment--text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+				cite.works-about__name Ковальчук Дмитрий
+				span.works-about__who основатель Loftschool
 
-				blockquote.works-about__comment-container
-					.works-about__avatar(style='background-image: url(../../assets/images/comment-avatar2.jpg)')
-					p.works-about__comment--text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-					cite.works-about__name Сабанцев Владимир
-					span.works-about__who преподаватель
-			
-			.works-about__contact
-				form.works-about__contact--card
+			blockquote.works-about__comment-container
+				.works-about__avatar(style='background-image: url(../../assets/images/comment-avatar2.jpg)')
+				p.works-about__comment--text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+				cite.works-about__name Сабанцев Владимир
+				span.works-about__who преподаватель
+		
+		.works-about__contact
+				.works-about__contact--card
 					h3.works-about__small-title.title-strip Связаться со мной
-					input(type="text", name="name", placeholder='Имя').works-about__input
-					input(type="text", name="mail", placeholder='Email').works-about__input
-					textarea(name="message", placeholder='Ваше сообщение').works-about__textarea
-					.works-about__contact--btn-wrapper
-						ul.works-about__contact--btn-list
-							li.works-about__contact--btn-item
-								button.works-about__contact--btn(type='submit') Отправить
-							li.works-about__contact--btn-item
-								button.works-about__contact--btn(type='reset') Очистить
-				a.go-up(href='#go-here')
+					form.works-form
+						label.visually-hidden(for='works-name') Имя
+						input(type="text", name="name", id='works-name', placeholder='Имя').works-form__input
+						label.visually-hidden(for='works-mail') E-Mail
+						input(type="text", name="mail", id='works-mail', placeholder='Email').works-form__input
+						label.visually-hidden(for='works-message') Ваше сообщение
+						textarea(name="message", id='works-message', placeholder='Ваше сообщение').works-form__textarea
+						.works-form__buttons-wrapper
+							ul.works-form__buttons-list
+								li.works-form__buttons-item
+									button.works-form__buttons(type='submit') Отправить
+								li.works-form__buttons-item
+									button.works-form__buttons(type='reset') Очистить
+					a.go-up(href='#go-here')

@@ -37,6 +37,7 @@
 	}
 	&__description {
 		margin-bottom: 40px;
+		z-index: 10;
 	}
 	&__aside {
 		width: 25%;
@@ -80,7 +81,7 @@
 				}
 			}
 		}
-		&__link-active {
+		&__link--active {
 			color: $green;
 			&::after {
 				content: '';
@@ -146,4 +147,8 @@
 	top: 50vh;
 	border-radius: 50%;
 	box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+	display: none;
+	@media screen and (max-width: $tablet) {
+		display: block;
+	}
 }

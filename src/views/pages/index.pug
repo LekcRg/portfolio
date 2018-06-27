@@ -6,29 +6,33 @@ block content
 			.welcome__photo(style='background-image: url(../../assets/images/man_photo.jpg)')
 			h1.welcome__name Владимир Астахов
 			h2.welcome__about Личный сайт веб разработчика
-			+social('welcome__social')
+			ul.welcome-social
+				each icon in soc
+					li.welcome-social__item
+						a.welcome-social__link(href=icon[1])
+							+icon(icon[0], 'welcome-social__icon')
 			+nav('navigation', [['Мои работы', '/works.html'], ['Обо мне', '/about.html'], ['Блог', '/blog.html']])
 
 		.welcome__card.welcome__card--back
-			h1.auth__title.title-strip Авторизируйтесь
+			h2.welcome__title.title-strip Авторизируйтесь
 			form.login-form
-				label.auth__label.auth__icon.auth__login-icon
-					input.auth__input(type="text" placeholder='Логин' name='login')
-				label.auth__label.auth__icon.auth__password-icon
-					input.auth__input(type="password" placeholder='Пароль' name='pass')
-				input.auth__input-checkbox(type='checkbox' name='captcha' id='captcha-checkbox')
-				label.auth__label.auth__checkbox(for='captcha-checkbox') Я человек
+				label.welcome__label.welcome__icon.welcome__login-icon
+					input.welcome__input(type="text" placeholder='Логин' name='login')
+				label.welcome__label.welcome__icon.welcome__password-icon
+					input.welcome__input(type="password" placeholder='Пароль' name='pass')
+				input.welcome__input-checkbox(type='checkbox' name='captcha' id='captcha-checkbox')
+				label.welcome__label.welcome__checkbox(for='captcha-checkbox') Я человек
 				.radio__row
-					input.auth__input-radio(type="radio" name='radio-captcha' id='yes' value='yes')
-					label.auth__label.label__radio(for='yes') Да
-					input.auth__input-radio(type="radio" name='radio-captcha' id='no' value='no')
-					label.auth__label.label__radio(for='no') Не уверен
-			nav.navigation
+					input.welcome__input-radio(type="radio" name='radio-captcha' id='yes' value='yes')
+					label.welcome__label.label__radio(for='yes') Да
+					input.welcome__input-radio(type="radio" name='radio-captcha' id='no' value='no')
+					label.welcome__label.label__radio(for='no') Не уверен
+			.navigation
 				ul.navigation__list
 					li.navigation__item
-						button.navigation__button#auth__btn Главная
+						button.navigation__button#welcome__btn-auth(type="submit") Главная
 					li.navigation__item
-						button.navigation__button Войти
+						button.navigation__button(type="submit") Войти
 		
 		button.button.welcome__button#welcome__btn Авторизоваться
 

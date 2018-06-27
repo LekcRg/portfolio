@@ -11,9 +11,9 @@
 		width: 100%;
 		flex-wrap: wrap;
 		@media screen and (max-width: $tablet) {
-			height: 240px;
+			height: 210px;
 		}
-		@media screen and (max-width: $tablet) {
+		@media screen and (max-width: $phone) {
 			height: 330px;
 		}
 	}
@@ -28,6 +28,7 @@
 		position: relative;
 		@media screen and (max-width: $tablet) {
 			width: 50%;
+			padding: 20px 15px 0px 25px;
 		}
 		@media screen and (max-width: $phone) {
 			width: 100% !important;
@@ -36,6 +37,10 @@
 		}
 		&:last-child {
 			padding-right: 30px;
+			@media screen and (max-width: $phone) {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
 			&::after {
 				display: none;
 			}

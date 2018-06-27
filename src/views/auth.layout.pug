@@ -1,5 +1,5 @@
 include ./common/_mixins
-
+-var soc = [['vk', 'https://vk.com'], ['github', 'https://github.com'], ['in', 'https://linkedin.com']]
 doctype html
 html(lang="en")
 	head
@@ -10,6 +10,6 @@ html(lang="en")
 		link(rel="stylesheet", href="main.min.css")
 	body
 		block content
-	include ./common/welcome-footer.pug
+		include ./common/welcome-footer.pug
 	script(src="./bootloader.bundle.js")
 	script(src="./auth.bundle.js")

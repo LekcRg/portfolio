@@ -66,13 +66,16 @@
 		margin: 40px 0 25px 0;
 	}
 
-	&__footer {
+	&-footer {
 		position: absolute;
 		bottom: 0;
 		color: #fff;
 		width: 100%;
 		text-align: center;
 		margin-bottom: 35px;
+		&__text {
+			font-size: 16px;
+		}
 	}
 	&__button {
 		position: absolute;
@@ -87,22 +90,22 @@
 			margin: auto;
 		}
 	}
-	&__social {
+	&-social {
 		margin: 30px 0;
-		&--icon {
+		&__icon {
 			fill: rgba(#fff, .5);
 			height: 22px;
 			max-width: 31px;
 			transition: fill .4s ease;
+			&:hover {
+				fill: $green-hover;
+			}
 		}
-		&--icon, &--link {
+		&__icon, &__link {
 			max-height: 22px;
 			max-width: 26px;
 		}
-		&:hover {
-			fill: $green-hover;
-		}
-		&--item {
+		&__item {
 			display: inline-block;
 			margin-left: 25px;
 			&:first-child {

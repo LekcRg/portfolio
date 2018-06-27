@@ -1,4 +1,4 @@
-const authBtn = document.querySelector('#auth__btn')
+const authBtn = document.querySelector('#welcome__btn-auth')
 const welcomeWrapper = document.querySelector('.welcome')
 const welcomeBtn = document.querySelector('#welcome__btn')
 console.log(authBtn);

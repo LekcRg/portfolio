@@ -1,4 +1,4 @@
-.auth__title {
+.welcome__title {
 	text-transform: uppercase;
 	font-family: 'Sansus';
 	font-size: 35px;
@@ -9,7 +9,7 @@
 		bottom: -15px;
 	}
 }
-.auth__label {
+.welcome__label {
 	width: 85%;
 	display: flex;
 	margin-bottom: 20px;
@@ -17,7 +17,7 @@
 	justify-content: center;
 	cursor: pointer;
 }
-.auth__input {
+.welcome__input {
 	width: 100%;
 	height: 45px;
 	border: none;
@@ -27,29 +27,29 @@
 	outline: 0;
 	outline-offset: 0;
 }
-.auth__icon::before {
+.welcome__icon::before {
 	content: '';
 	height: 45px;
 	width: 45px;
 	border-top-left-radius: 25px;
 	border-bottom-left-radius: 25px;
 }
-.auth__login-icon::before {
+.welcome__login-icon::before {
 	content: '';
 	background: svg-load('login.svg', fill='#c4cbcd') #f0efe9 no-repeat center;
 }
-.auth__password-icon::before {
+.welcome__password-icon::before {
 	content: '';
 	background: svg-load('password.svg', fill='#c4cbcd') #f0efe9 no-repeat center;
 }
-.auth__input-checkbox {
+.welcome__input-checkbox {
 	display: none;
-	&:checked + .auth__checkbox::before {
+	&:checked + .welcome__checkbox::before {
 		background: svg-load('check.svg', fill='#fff') $green no-repeat center;
 		background-size: 70%;
 	}
 }
-.auth__checkbox::before {
+.welcome__checkbox::before {
 	content: '';
 	width: 20px;
 	height: 20px;
@@ -63,7 +63,7 @@
 	display: flex;
 	justify-content: center;
 }
-.auth__input-radio {
+.welcome__input-radio {
 	display: none;
 	&:checked + .label__radio::after {
 		background: $green;

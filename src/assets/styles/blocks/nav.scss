@@ -5,12 +5,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	position: absolute;
-	right: 35px;top: 30px;
 	transition-property: opacity, filter;
 	transition-duration: 0.15s;
 	transition-timing-function: linear;
-
 	// Normalize (<button>)
 	font: inherit;
 	color: inherit;
@@ -19,6 +16,7 @@
 	border: 0;
 	margin: 0;
 	overflow: visible;
+	margin-left: auto;
 
 	&:hover {
 		@if false == true {
@@ -155,7 +153,7 @@
 		justify-content: center;
 		flex-direction: column;
 		opacity: 0;
-		transition: all .4s ease;
+	transition: all .4s ease;
 		&--item {
 			margin-bottom: 30px;
 		}
@@ -166,6 +164,9 @@
 			text-decoration: none;
 			text-transform: uppercase;
 			position: relative;
+			@media screen and (max-width: $phone) {
+				font-size: 50px;
+			}
 			&::after {
 				content: '';
 				height: 3px;

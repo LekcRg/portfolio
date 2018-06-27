@@ -13,23 +13,25 @@ html(lang="ru")
 	body
 		.wrapper
 			.hero(class=heroClass)
-				button.hamburger.hamburger--squeeze#hamburger(:class='{ "is-active": isActive }')
-					span.hamburger-box
-						span.hamburger-inner
 				header.header 
 					.header__social
 						+social
+					button.hamburger.hamburger--squeeze#hamburger(type="submit")
+						span.hamburger-box
+							span.hamburger-inner
 
 				.hero__content
 					.hero__photo(style='background-image: url(../../assets/images/man_photo.jpg)')
 					block heroContant
+				.bg-triangles
+					svg.bg-triangle(viewBox="0 0 100 100" preserveAspectRatio="none")
+						polygon(points="0 100, 50 100, 0 0" class=bg + '-left')
+						polygon(points="50,100 100,0 100,100" class=bg + '-right')
+					svg.bg-square
+						rect(x="0" y="0" width="50%" height="2px" class=bg + '-left')
+						rect(x="50%" y="0" width="50%" height="2px" class=bg + '-right')
 
 			main.maincontent#go-here
-				.bg-triangles
-					svg.bg-triangle(viewBox="0 0 100 100" preserveAspectRatio="none" class=bg + '-left')
-						polygon(points="0 100, 100 100, 0 0")
-					svg.bg-triangle(viewBox="0 0 100 100" preserveAspectRatio="none" class=bg + '-right')
-						polygon(points="0,100 100,0 100,100")
 				block content
 
 			include ./common/footer.pug
@@ -37,11 +39,6 @@ html(lang="ru")
 		include ./components/entry.pug
 
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.min.js")
-		script
-			.
-				// скорее всего это не работает =(
-				import smoothscroll from '../assets/scripts/modules/smoothscroll.min';
-				smoothscroll.polyfill();
 
 		script(src='bootloader.bundle.js')
 		script(src='vendor.bundle.js')
