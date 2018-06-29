@@ -1,7 +1,13 @@
 body, html {
   height: 100%;
 }
-
+html {
+  font-size: 16px;
+  @media screen and (max-width: $tablet) {
+    font-size: 14px;
+  }
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
   font-size: 16px;
@@ -20,6 +26,11 @@ body {
 .container {
   margin: 0 auto;
   width: 95%;
+}
+
+.maincontent {
+  position: relative;
+  z-index: 10;
 }
 
 button {
@@ -45,4 +56,72 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0;
   padding: 0;
+}
+
+.button {
+  display: block;
+  padding: 15px 35px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all .4s ease;
+  &:hover {
+    background-color: $green-hover;
+    border-color: $green-hover;
+  }
+}
+
+.social {
+  &__icon {
+    fill: #fff;
+    transition: fill .4s ease;
+    &:hover {
+      fill: $green-hover;
+    }
+  }
+  &__icon, &__link {
+    max-height: 22px;
+    max-width: 31px;
+  }
+  &__item {
+    margin-left: 20px;
+    display: inline-block;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.title-strip {
+  position: relative;
+  &::after {
+    content: '';
+    width: 90px;
+    height: 3px;
+    position: absolute;
+    background: $black;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+.small-title {
+  text-align: center;
+  font-family: 'Sansus';
+  font-size: 34px;
+  text-transform: uppercase;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;
 }

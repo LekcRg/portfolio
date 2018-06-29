@@ -1,16 +1,15 @@
 include ./common/_mixins
-
+-var soc = [['vk', 'https://vk.com'], ['github', 'https://github.com'], ['in', 'https://linkedin.com']]
 doctype html
 html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Portfolio | welcome page
-    link(rel="stylesheet", href="main.min.css")
-  body
-    
-    block content
-
-    script(src="./bootloader.bundle.js")
-    script(src="./auth.bundle.js")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title Portfolio | welcome page
+		link(rel="stylesheet", href="main.min.css")
+	body
+		block content
+		include ./common/welcome-footer.pug
+	script(src="./bootloader.bundle.js")
+	script(src="./auth.bundle.js")
