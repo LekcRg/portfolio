@@ -39,7 +39,7 @@
 		align-items: flex-start;
 		padding-right: 20px;
 	}
-	&--title {
+	&-title {
 		font-family: 'Sansus';
 		font-size: 63px;
 		text-align: center;
@@ -67,13 +67,13 @@
 			z-index: -1;
 		}
 	}
-	&--small-title {
+	&-small-title {
 		margin-bottom: 35px;
 		&::after {
 			bottom: -10px;
 		}
 	}
-	&--wrapper {
+	&-wrapper {
 		margin-top: 30px;
 		display: flex;
 		flex-direction: column;
@@ -87,7 +87,7 @@
 			width: 50%;
 		}
 	}
-	&--img {
+	&-img {
 		width: 100%;
 		max-width: 440px;
 		text-align: center;
@@ -97,14 +97,14 @@
 .about__right {
 	background-color: #f4f5f0;
 	padding-bottom: 30px;
-	&--text-wrapper {
+	&-text-wrapper {
 		color: $grey;
 		& p {
 			margin-top: 30px;
 			margin-bottom: 55px;
 		}
 	}
-	&--title {
+	&-title {
 		margin-top: 20px;
 		&::after {
 			bottom: -10px;

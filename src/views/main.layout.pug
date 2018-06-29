@@ -24,10 +24,10 @@ html(lang="ru")
 					.hero__photo(style='background-image: url(../../assets/images/man_photo.jpg)')
 					block heroContant
 				.bg-triangles
-					svg.bg-triangle(viewBox="0 0 100 100" preserveAspectRatio="none")
+					svg.bg-triangle.bg-fill(viewBox="0 0 100 100" preserveAspectRatio="none")
 						polygon(points="0 100, 50 100, 0 0" class=bg + '-left')
 						polygon(points="50,100 100,0 100,100" class=bg + '-right')
-					svg.bg-square
+					svg.bg-square.bg-fill
 						rect(x="0" y="0" width="50%" height="2px" class=bg + '-left')
 						rect(x="50%" y="0" width="50%" height="2px" class=bg + '-right')
 

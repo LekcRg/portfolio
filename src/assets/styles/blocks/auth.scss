@@ -16,6 +16,9 @@
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	@media screen and (max-width: $phone) {
+		width: 94%;
+	}
 }
 .welcome__input {
 	width: 100%;
@@ -59,7 +62,7 @@
 	cursor: pointer;
 	transition: background .4s ease;
 }
-.radio__row {
+.welcome__radio-row {
 	display: flex;
 	justify-content: center;
 }
