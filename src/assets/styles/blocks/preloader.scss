@@ -1,0 +1,50 @@
+@keyframes preloader-animation {
+	to {
+		stroke-dasharray: 96;
+		stroke-dashoffset: -50;
+	}
+}
+
+.preloader {
+	position: absolute;
+	top: 0;left: 0;bottom: 0;right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $green;
+	background: url(./assets/images/forest_prel_bg.jpg) center no-repeat / cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+	opacity: 1;
+	transition: opacity 1s ease;
+	overflow: hidden;
+	&__icon, &__icon g, &__icon path{
+		width: 100px;
+	}
+	&__icon:hover &__line {
+		animation-play-state: paused;
+		stroke-dashoffset: -96;
+		stroke-dasharray: 96;
+	}
+	&__animation &__line{
+		animation: preloader-animation 1s cubic-bezier(.8,.0,.8,.6) infinite;
+	}
+	&__line {
+		fill: none;
+		stroke: #fff;
+		stroke-dasharray: 50;
+		stroke-dashoffset: 50;
+		transition: all .6s ease;
+		&--2 {
+			animation-delay: .2s;
+		}
+		&--3 {
+			animation-delay: .4s;
+		}
+	}
+	&--done &__line{
+		stroke-dashoffset: -96;
+		stroke-dasharray: 96;
+	}
+}

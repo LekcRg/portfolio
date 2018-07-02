@@ -152,3 +152,8 @@
 		display: block;
 	}
 }
+.blog__aside--fixed {
+	position: fixed;
+	left: 0;top: 10px;
+	width: 25%;
+}

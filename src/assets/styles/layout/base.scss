@@ -15,6 +15,7 @@ body {
   color: $text-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 .wrapper {

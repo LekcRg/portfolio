@@ -1,0 +1,37 @@
+script(type='text/x-template')#slider
+	.works-slider
+		info(
+			:work='currentWork'
+		)
+		pictures(
+			:work='currentWork'
+		)
+		buttons(
+			:works='works'
+			:currentIndex='currentIndex'
+			@slide='handleSlide'
+		)
+
+script(type='text/x-template')#slider-info
+	.works-slider__left
+		h2.works-slider__title.title-strip {{work.title}}
+		span.works-slider__used {{work.skills}}
+		a.works-slider__button-link(:href='work.link') Посмотреть сайт
+
+script(type='text/x-template')#slider-pic
+	.works-slider__img-container
+		img(:src='work.photo', alt="work-1").works-slider__img
+
+
+script(type='text/x-template')#slider-buttons
+	.works-slider__buttons
+		button.works-slider__button.works-slider__prev(
+			type='submit'
+			:style="{ 'background-image': 'url(' + getNewArray('prev').photo + ')' }"
+			@click='slide("prev")'
+		)
+		button.works-slider__button.works-slider__next(
+			type='submit'
+			:style="{ 'background-image': 'url(' + getNewArray('next').photo + ')' }"
+			@click='slide("next")'
+		)

@@ -15,11 +15,19 @@ block content
 
 		.welcome__card.welcome__card--back
 			h2.welcome__title.title-strip Авторизируйтесь
-			form.login-form
-				label.welcome__label.welcome__icon.welcome__login-icon
-					input.welcome__input(type="text" placeholder='Логин' name='login')
-				label.welcome__label.welcome__icon.welcome__password-icon
-					input.welcome__input(type="password" placeholder='Пароль' name='pass')
+			form.login-form(action='')
+				label.welcome__label
+					input.welcome__input#auth-login(type="text" placeholder='Логин' name='login')
+					.welcome__icon-wrapper 
+						+icon('login', 'welcome__icon')
+					.welcome__error#auth-login--error Вы не ввели логин
+
+				label.welcome__label
+					input.welcome__input#auth-pass(type="password" placeholder='Пароль' name='pass')
+					.welcome__icon-wrapper 
+						+icon('password', 'welcome__icon')
+					.welcome__error#auth-pass--error Вы не ввели пароль
+
 				input.welcome__input-checkbox(type='checkbox' name='captcha' id='captcha-checkbox')
 				label.welcome__label.welcome__checkbox(for='captcha-checkbox') Я человек
 				.welcome__radio-row
@@ -27,12 +35,12 @@ block content
 					label.welcome__label.label__radio(for='yes') Да
 					input.welcome__input-radio(type="radio" name='radio-captcha' id='no' value='no')
 					label.welcome__label.label__radio(for='no') Не уверен
-			.navigation
-				ul.navigation__list
-					li.navigation__item
-						button.navigation__button#welcome__btn-auth Главная
-					li.navigation__item
-						button.navigation__button(type="submit") Войти
+				.navigation
+					ul.navigation__list
+						li.navigation__item
+							button.navigation__button#welcome__btn-auth Главная
+						li.navigation__item
+							button.navigation__button(type="submit") Войти
 		
 		button.button.welcome__button#welcome__btn Авторизоваться
 
