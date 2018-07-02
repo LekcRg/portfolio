@@ -20,13 +20,13 @@ block content
 					input.welcome__input#auth-login(type="text" placeholder='Логин' name='login')
 					.welcome__icon-wrapper 
 						+icon('login', 'welcome__icon')
-					.welcome__error#auth-login--error Вы не ввели логин
+					.input__error#auth-login--error Вы не ввели логин
 
 				label.welcome__label
 					input.welcome__input#auth-pass(type="password" placeholder='Пароль' name='pass')
 					.welcome__icon-wrapper 
 						+icon('password', 'welcome__icon')
-					.welcome__error#auth-pass--error Вы не ввели пароль
+					.input__error#auth-pass--error Вы не ввели пароль
 
 				input.welcome__input-checkbox(type='checkbox' name='captcha' id='captcha-checkbox')
 				label.welcome__label.welcome__checkbox(for='captcha-checkbox') Я человек

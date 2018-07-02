@@ -1,4 +1,4 @@
-import "./modules/preloader";
+// import "./modules/preloader";
 
 const authBtn = document.querySelector("#welcome__btn-auth");
 const welcomeWrapper = document.querySelector(".welcome");

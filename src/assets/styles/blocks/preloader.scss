@@ -6,7 +6,7 @@
 }
 
 .preloader {
-	position: absolute;
+	position: fixed;
 	top: 0;left: 0;bottom: 0;right: 0;
 	width: 100%;
 	height: 100%;
@@ -15,17 +15,12 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: 999;
+	z-index: 99999999999;
 	opacity: 1;
 	transition: opacity 1s ease;
 	overflow: hidden;
 	&__icon, &__icon g, &__icon path{
 		width: 100px;
-	}
-	&__icon:hover &__line {
-		animation-play-state: paused;
-		stroke-dashoffset: -96;
-		stroke-dasharray: 96;
 	}
 	&__animation &__line{
 		animation: preloader-animation 1s cubic-bezier(.8,.0,.8,.6) infinite;
