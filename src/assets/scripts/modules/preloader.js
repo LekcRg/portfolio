@@ -1,8 +1,6 @@
 const preloaderContainer = document.querySelector(".preloader"),
   preloaderAnim = document.querySelector(".preloader__icon");
 
-console.log("sdfasf");
-
 window.onload = () => {
   preloaderAnim.addEventListener(
     "animationiteration",
