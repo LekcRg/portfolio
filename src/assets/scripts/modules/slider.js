@@ -11,22 +11,17 @@ const buttons = {
       this.$emit("slide", direction);
     },
     getNewArray(direction) {
-      const newWorks = this.works;
+      let newWorks = [...this.works];
 
       switch (direction) {
         case "prev":
           newWorks.unshift(newWorks.pop());
-          break;
+          return newWorks[this.currentIndex];
 
         case "next":
           newWorks.push(newWorks.shift());
-          break;
-
-        default:
-          break;
+          return newWorks[this.currentIndex];
       }
-
-      return newWorks[this.currentIndex];
     }
   }
 };
