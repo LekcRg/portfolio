@@ -28,6 +28,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		position: relative;
 		@media screen and (max-width: $tablet) {
 			
 		}
@@ -35,16 +36,25 @@
 	&__img {
 		max-width: 90%;
 		max-height: 90%;
+		position: absolute;
+		top: 0;left: 0;right: 0;bottom: 0;
+		margin: auto;
 	}
 	&__buttons {
 		display: flex;
+		z-index: 20;
+	}
+	&__bg-button{
+		position: absolute;
+		top: 0;left: 0;right: 0;bottom: 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		z-index: 0;
 	}
 	&__button {
 		width: 50%;
 		position: relative;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
 		outline: none;
 		&::before {
 			content: '';
@@ -54,6 +64,7 @@
 			background-color: rgba(#b0b7aa, .7);
 			top: 0;left: 0;right: 0;bottom: 0;
 			transition: background-color .4s ease;
+			z-index: 1;
 		}
 		&:hover::before {
 			background-color: rgba(#b0b7aa, .5);
@@ -69,6 +80,7 @@
 			margin: auto;
 			background: svg-load('portf_arrow_down.svg' fill=#fff) no-repeat center;
 			cursor: pointer;
+			z-index: 2;
 		}
 	}
 	&__next {
@@ -81,7 +93,9 @@
 			margin: auto;
 			background: svg-load('portf_arrow_up.svg' fill=#fff) no-repeat center;
 			cursor: pointer;
+			z-index: 2;
 		}
+
 	}
 	&__title {
 		color: $black;
@@ -125,4 +139,113 @@
 			margin-right: 10px;
 		}
 	}
+}
+
+.works__button-bg {
+
+	&-enter-active, &-leave-active {
+		transition: all .4s ease;
+	}
+	&-enter, &-leave-to {
+		opacity: 0;
+	}
+}
+
+.slider-anim-container {
+	position: absolute;
+	bottom: 0;left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.slide-button-anim-prev {
+
+	&-enter-active, &-leave-active {
+		transition: all 1s ease;
+	}
+	&-leave-to {
+		transform: translateY(100%);
+	}
+	&-enter {
+		transform: translateY(-100%);
+	}
+}
+
+.slide-button-anim-next {
+
+	&-enter-active, &-leave-active {
+		transition: all 1s ease;
+	}
+	&-leave-to {
+		transform: translateY(-100%);
+	}
+	&-enter {
+		transform: translateY(100%);
+	}
+}
+
+.slider-anim-img-container {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.slide-img-anim {
+
+	&-enter-active, &-leave-active {
+		transition: all 1s ease;
+	}
+	&-leave-to {
+		opacity: 0;
+	}
+	&-enter {
+		opacity: 0;
+	}
+	&-enter-to {
+		transition-delay: .6s;
+		opacity: 1;
+	}
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.works-slider__used-wrapper {
+	margin-bottom: 30px;
+	display: inline-block;
+}
+
+
+@keyframes jackInTheBox {
+  from {
+		opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    transform: rotate(3deg);
+  }
+
+  to {
+		opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.jackInTheBox {
+	animation-name: jackInTheBox;
+	animation-duration: .7s;
+	animation-fill-mode: both;
 }

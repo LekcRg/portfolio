@@ -14,24 +14,43 @@ script(type='text/x-template')#slider
 
 script(type='text/x-template')#slider-info
 	.works-slider__left
-		h2.works-slider__title.title-strip {{work.title}}
-		span.works-slider__used {{work.skills}}
+		transition-group.works-slider__used-wrapper(
+				appear
+				:css='false'
+				@before-enter='callback("before-enter")'
+				@after-enter='callback("after-enter")'
+				@enter='enterHandler'
+			)
+				h2.works-slider__title.title-strip(:key='work.title') {{work.title}}
+
+		transition-group.works-slider__used-wrapper(
+			appear
+			:css='false'
+			@before-enter='callback("before-enter")'
+			@after-enter='callback("after-enter")'
+			@enter='enterHandler'
+		)
+			span.works-slider__used(:key='work.skills') {{work.skills}}
+
 		a.works-slider__button-link(:href='work.link') Посмотреть сайт
 
 script(type='text/x-template')#slider-pic
-	.works-slider__img-container
-		img(:src='work.photo', alt="work-1").works-slider__img
+	transition-group(name='slide-img-anim' tag='div').works-slider__img-container
+		img(:src='work.photo' :key='work.photo' alt="work-1").works-slider__img
 
 
 script(type='text/x-template')#slider-buttons
 	.works-slider__buttons
-		button.works-slider__button.works-slider__prev(
-			type='submit'
-			:style="{ 'background-image': 'url(' + getNewArray('prev').photo + ')' }"
-			@click='slide("prev")'
-		)
-		button.works-slider__button.works-slider__next(
-			type='submit'
-			:style="{ 'background-image': 'url(' + getNewArray('next').photo + ')' }"
-			@click='slide("next")'
-		)
+		button.works-slider__button.works-slider__prev(type='submit' @click='slide("prev")')
+			transition-group(tag='div' name='slide-button-anim-prev').slider-anim-container
+				.works-slider__bg-button(
+					:key='getNewArray("next").photo' 
+					:style="{ 'background-image': 'url(' + getNewArray('prev').photo + ')' }"
+				)
+
+		button.works-slider__button.works-slider__next(type='submit' @click='slide("next")')
+			transition-group(tag='div' name='slide-button-anim-next').slider-anim-container
+				.works-slider__bg-button(
+					:key='getNewArray("next").photo' 
+					:style="{ 'background-image': 'url(' + getNewArray('next').photo + ')' }"
+				)

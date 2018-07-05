@@ -37,6 +37,44 @@ const info = {
   template: "#slider-info",
   props: {
     work: Object
+  },
+  methods: {
+    callback(eventName) {
+      console.log(eventName);
+    },
+    enterHandler(el, done) {
+      const elText = el.innerText;
+      const letters = elText
+        .trim()
+        .split("")
+        .map(letter => {
+          return `<span>${letter}</span>`;
+        })
+        .join("");
+
+      el.innerHTML = letters;
+      const animatingLetters = Array.from(el.children);
+      let i = 0;
+
+      const animate = array => {
+        const currentLetter = array[i];
+
+        let timer = setTimeout(() => {
+          animate(animatingLetters);
+        }, 20);
+
+        currentLetter.classList.add("jackInTheBox");
+
+        i++;
+
+        if (i >= array.length) {
+          clearTimeout(timer);
+          done();
+        }
+      };
+
+      animate(animatingLetters);
+    }
   }
 };
 
