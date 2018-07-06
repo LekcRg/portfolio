@@ -156,4 +156,7 @@
 	position: fixed;
 	left: 0;top: 10px;
 	width: 25%;
+	@media screen and (max-width: $tablet) {
+		position: relative;
+	}
 }

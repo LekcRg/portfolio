@@ -29,7 +29,7 @@ const welcomeWrapper = document.querySelector(".welcome");
 const welcomeBtn = document.querySelector("#welcome__btn");
 
 authBtn.addEventListener("click", function(ev) {
-  event.preventDefault();
+  ev.preventDefault();
   welcomeBtn.style.display = "block";
   setTimeout(() => {
     welcomeWrapper.classList.toggle("welcome__card--flipped");
@@ -126,12 +126,12 @@ loginForm.addEventListener("submit", function(ev) {
   const authLogin = document.querySelector("#auth-login");
   const authPass = document.querySelector("#auth-pass");
   const captchaCheckbox = document.querySelector("#captcha-checkbox");
+  const captchaLabel = document.querySelector(".welcome__checkbox");
 
   console.log(captchaCheckbox.checked);
 
   if (!captchaCheckbox.checked) {
-    const captchaLabel = document.querySelector(".welcome__checkbox");
-    captchaLabel.style.color = "#e44845";
+    captchaLabel.classList.add("color-red");
   }
 
   validateInput(authLogin);
@@ -141,7 +141,9 @@ loginForm.addEventListener("submit", function(ev) {
 function validateInput(input) {
   if (!input.value) {
     const authLabel = input.parentElement;
-    const authError = authLabel.querySelector(".welcome__error");
+    const authError = authLabel.querySelector(".input__error");
+
+    console.log(authLabel + " " + authError);
 
     authError.style.display = "block";
     setTimeout(() => {

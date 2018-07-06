@@ -6,7 +6,6 @@ import "./modules/preloader";
 const worksValidate = new Vue({
   el: ".works-form",
   data: {
-    errors: [],
     name: null,
     mail: null,
     message: null
@@ -18,7 +17,6 @@ const worksValidate = new Vue({
     addErrorClass: e => {
       e.target.classList.add("works__form--error");
       e.target.nextSibling.style.display = "block";
-      e.target.style.marginBottom = "65px";
       setTimeout(() => {
         e.target.nextSibling.style.opacity = 1;
       }, 1);
@@ -30,7 +28,6 @@ const worksValidate = new Vue({
         setTimeout(() => {
           e.target.nextSibling.style.display = "none";
         }, 400);
-        e.target.style.marginBottom = "20px";
       }, 1000);
     }
   }

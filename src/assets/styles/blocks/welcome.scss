@@ -48,6 +48,7 @@
 			}
 			& .welcome__button {
 				opacity: 0;
+				user-select: none;
 			}
 		}
 	}

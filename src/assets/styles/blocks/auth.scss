@@ -147,30 +147,12 @@
 		background: $green-hover;
 	}
 }
-.input__error {
-	position: absolute;
-	bottom: -55px;left: 40px;
-	padding: 10px 15px;
-	background: #e44845;
-	border-radius: 5px;
-	z-index: 99;
-	display: none;
-	opacity: 0;
-	transition: opacity .4s ease;
-	&::before {
-		content: ''; 
-		position: absolute; /* Абсолютное позиционирование */
-		left: 40px; top: -18px; /* Положение треугольника */
-		border: 8px solid transparent; /* Прозрачные границы */
-		border-bottom: 10px solid #e44845; /* Добавляем треугольник */
-	}
-}
+
 .welcome__label--error {
-	margin-bottom: 65px;
 	& .welcome__input {
 		border: 1px solid #e44845;
 	}
-	& .welcome__error {
+	& .input__error {
 		opacity: 1;
 	}
 	& .welcome__icon-wrapper .welcome__icon {

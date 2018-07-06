@@ -134,6 +134,7 @@
 					top: 0;left: 0;right: 0;bottom: 0;
 					background: url(../assets/images/works-about.png) #f4f5f0 no-repeat center / cover;
 					filter: blur(5px);
+					background-color: #fff
 				}
 				&::after {
 					content: '';
@@ -188,7 +189,6 @@
 		padding: 14px 20px;
 		outline: 0;
 		outline-offset: 0;
-		margin-bottom: 20px;
 		width: 90%;
 		border: 1px solid transparent;
 		position: relative;
@@ -200,7 +200,6 @@
 		outline: 0;
 		outline-offset: 0;
 		border: 1px solid transparent;
-		margin-bottom: 20px;
 		height: 130px;
 		min-height: 130px;
 		width: 90%;
@@ -259,7 +258,9 @@
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-}
-.input__error--works {
-	bottom: 10px;
+	z-index: 999;
+	margin-bottom: 20px;
+	& input, & textarea {
+		// z-index: 0!important;
+	}
 }
