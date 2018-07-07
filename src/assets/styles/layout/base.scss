@@ -137,9 +137,14 @@ p {
 	background: #e44845;
 	border-radius: 5px;
 	z-index: 9999!important;
-	display: none;
 	opacity: 0;
 	transition: opacity .4s ease;
+	visibility: hidden;
+	user-select: none;
+	&--active {
+		opacity: 1;
+		visibility: visible;
+	}
 	&::before {
 		content: ''; 
 		position: absolute; /* Абсолютное позиционирование */

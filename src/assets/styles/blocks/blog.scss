@@ -41,9 +41,18 @@
 	}
 	&__aside {
 		width: 25%;
+		transition: left .4s ease;
 		@media screen and (max-width: $tablet) {
-			overflow: hidden;
-			width: 0;
+			position: fixed;
+			background: $green;
+			box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+			top: 0;
+			left: -25%;
+			height: 100%;
+			z-index: 99;
+		}
+		&--active {
+			left: 0;
 		}
 	}
 	&-nav {
@@ -78,6 +87,12 @@
 					margin: auto;
 					right: 0;
 					background: $green;
+					@media screen and (max-width: $tablet) {
+						background: #fff;
+					}
+				}
+				@media screen and (max-width: $tablet) {
+					color: #fff;
 				}
 			}
 		}
@@ -92,6 +107,12 @@
 				margin: auto;
 				right: 0;
 				background: $green;
+				@media screen and (max-width: $tablet) {
+					background: #fff;
+				}
+			}
+			@media screen and (max-width: $tablet) {
+				color: #fff;
 			}
 		}
 	}
@@ -101,7 +122,6 @@
 		color: $black;
 		@media screen and (max-width: $tablet) {
 			width: 100%;
-
 		}
 	}
 
@@ -141,10 +161,10 @@
 	width: 60px;
 	height: 60px;
 	background: $green;
-	position: fixed;
+	position: absolute;
 	z-index: 999;
-	left: -45px;
-	top: 50vh;
+	right: -23px;
+	top: 50%;
 	border-radius: 50%;
 	box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
 	display: none;
@@ -158,5 +178,6 @@
 	width: 25%;
 	@media screen and (max-width: $tablet) {
 		position: relative;
+		width: 100%;
 	}
 }
