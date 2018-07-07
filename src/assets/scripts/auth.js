@@ -128,8 +128,6 @@ loginForm.addEventListener("submit", function(ev) {
   const captchaCheckbox = document.querySelector("#captcha-checkbox");
   const captchaLabel = document.querySelector(".welcome__checkbox");
 
-  console.log(captchaCheckbox.checked);
-
   if (!captchaCheckbox.checked) {
     captchaLabel.classList.add("color-red");
   }
@@ -143,11 +141,11 @@ function validateInput(input) {
     const authLabel = input.parentElement;
     const authError = authLabel.querySelector(".input__error");
 
-    console.log(authLabel + " " + authError);
-
-    authError.style.display = "block";
-    setTimeout(() => {
-      authLabel.classList.add("welcome__label--error");
-    }, 1);
+    authLabel.classList.add("welcome__label--error");
   }
+  input.onfocus = () => {
+    if (input.parentNode.classList.contains("welcome__label--error")) {
+      input.parentNode.classList.remove("welcome__label--error");
+    }
+  };
 }

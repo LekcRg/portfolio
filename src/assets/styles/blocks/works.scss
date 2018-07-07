@@ -52,9 +52,6 @@
 			justify-content: center;
 			margin-bottom: 50px;
 			z-index: 99;
-			& * {
-				z-index: 99;
-			}
 			@media screen and (max-width: $phone) {
 				flex-direction: column;
 			}
@@ -112,9 +109,6 @@
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
-			& * {
-				// z-index: 99;
-			}
 			&-card {
 				border-radius: 5px;
 				display: flex;
@@ -126,26 +120,18 @@
 				flex-direction: column;
 				width: 380px;
 				z-index: 1;
-				&::before {
+				&::before, &::after {
 					content: '';
 					position: absolute;
-					width: 100%;
-					height: 100%;
 					top: 0;left: 0;right: 0;bottom: 0;
-					background: url(../assets/images/works-about.png) #f4f5f0 no-repeat center / cover;
-					filter: blur(5px);
-					background-color: #fff;
 					z-index: -1;
 				}
-				&::after {
-					content: '';
-					position: absolute;
-					width: 100%;
-					height: 100%;
-					top: 0;left: 0;right: 0;bottom: 0;
-					background-color: rgba(#fff, .15);
+				&::before {
+					background: url(../assets/images/works-about.png) #f4f5f0 no-repeat center / cover;
 					filter: blur(5px);
-					z-index: -1;
+				}
+				&::after {
+					background-color: rgba(#fff, .2);
 				}
 				@media screen and (max-width: $phone) {
 					width: 100%;

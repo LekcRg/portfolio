@@ -5,10 +5,7 @@
 	width: 100%;
 	background-color: rgba($black, .85);
 	font-weight: 300;
-	z-index: 999;
-	& * {
-		z-index: 999;
-	}
+	z-index: 1202;
 	&__top {
 		display: flex;
 		height: 140px;

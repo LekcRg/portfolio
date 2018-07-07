@@ -9,16 +9,38 @@ const skill = {
   methods: {
     drawCircle() {
       const circle = this.$refs["color-circle"];
+      let varIsVisible = this.isVisible(circle);
       const dashOffset = parseInt(
         getComputedStyle(circle).getPropertyValue("stroke-dashoffset")
       );
 
-      const persents = (dashOffset / 100) * (100 - this.skillPercents);
-      circle.style.strokeDashoffset = persents;
+      if (varIsVisible && dashOffset >= 251) {
+        const persents = (dashOffset / 100) * (100 - this.skillPercents);
+        circle.style.strokeDashoffset = persents;
+      }
+    },
+    isVisible(item) {
+      var itemPosition = {
+          top: window.pageYOffset + item.getBoundingClientRect().top,
+          bottom: window.pageYOffset + item.getBoundingClientRect().bottom
+        },
+        windowPosition = {
+          top: window.pageYOffset,
+          bottom: window.pageYOffset + document.documentElement.clientHeight
+        };
+
+      if (
+        itemPosition.bottom > windowPosition.top &&
+        itemPosition.top < windowPosition.bottom
+      ) {
+        return true;
+      }
     }
   },
   mounted() {
-    this.drawCircle();
+    window.addEventListener("scroll", ev => {
+      this.drawCircle();
+    });
   }
 };
 

@@ -32,7 +32,7 @@
 			stroke-dasharray: 251;
 			stroke-dashoffset: 251;
 			transition-delay: .1s;
-			transition: stroke-dasharray 1s ease;
+			transition: stroke-dashoffset .4s ease;
 		}
 		&-text {
 			display: flex;

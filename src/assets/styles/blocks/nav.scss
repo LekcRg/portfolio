@@ -112,7 +112,10 @@
 	width: 100%;
 	top: 0;left: 0;right: 0;
 	z-index: 9999;
-	display: none;
+	visibility: hidden;
+	user-select: none;
+	opacity: 0;
+	transition: all .4s ease;
 	&__container {
 		position: fixed;
 		width: 100%;
@@ -123,8 +126,9 @@
 		height: 100%;
 		background: rgba($green, .85);
 		top: 0;bottom: 0;
-		width: 0;
-		transition: width .4s ease;
+		width: 0%;
+		transition: all .4s ease;
+		opacity: 0;
 		&--left {
 			left: 0;
 		}
@@ -133,8 +137,11 @@
 		}
 	}
 	&.is-active {
+		visibility: visible;
+		opacity: 1;
 		& .fs-nav__bg {
 			width: 50%;
+			opacity: 1;
 		}
 		& .fs-nav__list {
 			opacity: 1;
@@ -153,7 +160,7 @@
 		justify-content: center;
 		flex-direction: column;
 		opacity: 0;
-	transition: all .4s ease;
+		transition: all .4s ease;
 		&--item {
 			margin-bottom: 30px;
 		}
