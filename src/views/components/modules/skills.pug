@@ -1,15 +1,20 @@
 script(type='text/x-template')#skills-list
 	.skills
 		ul.skills__row-list
-			li.skills__row-item(v-for="skill in skills")
-				skills-row(:skill='skill')
+			li.skills__row-item(
+				v-for="type in types"
+				)
+				skills-row(:type='type' :skills='skills')
 
 script(type='text/x-template')#skill-row
 	.skills__row
-		h4.skills__title {{ skill.skillsGroup }}
+		h4.skills__title {{type.title}}
 		ul.skills__list
-			li.skills__item(v-for='(skillPercents, skillName) in skill.skills')
-				skill(:skillName='skillName' :skillPercents='skillPercents')
+			li.skills__item(
+				v-for='skill in skills'
+				v-if='skill.category == type.id'
+				)
+				skill(:skillName='skill.title' :skillPercents='skill.percents')
 
 script(type='text/x-template')#skill
 	figure.skills__circle-wrapper

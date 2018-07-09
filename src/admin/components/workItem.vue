@@ -55,7 +55,12 @@ export default {
         formData.append(prop, this.newWork[prop]);
       });
 
-      this.addNewWork(formData);
+      this.addNewWork(formData).then(e => {
+        this.newWork.title = "";
+        this.newWork.techs = "";
+        this.newWork.link = "";
+        this.newWork.photo = "";
+      });
     },
     removeWork() {
       this.removeOldWork(this.work);

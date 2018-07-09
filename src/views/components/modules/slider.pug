@@ -1,11 +1,7 @@
 script(type='text/x-template')#slider
 	.works-slider
-		info(
-			:work='currentWork'
-		)
-		pictures(
-			:work='currentWork'
-		)
+		info(:work='currentWork')
+		pictures(:work='currentWork')
 		buttons(
 			:works='works'
 			:currentIndex='currentIndex'
@@ -30,13 +26,13 @@ script(type='text/x-template')#slider-info
 			@after-enter='callback("after-enter")'
 			@enter='enterHandler'
 		)
-			span.works-slider__used(:key='work.skills') {{work.skills}}
+			span.works-slider__used(:key='work.techs') {{work.techs}}
 
 		a.works-slider__button-link(:href='work.link') Посмотреть сайт
 
 script(type='text/x-template')#slider-pic
 	transition-group(name='slide-img-anim' tag='div').works-slider__img-container
-		img(:src='work.photo' :key='work.photo' alt="work-1").works-slider__img
+		img(:src='"http://webdev-api.loftschool.com/" + work.photo' :key='work.photo' alt="work-1").works-slider__img
 
 
 script(type='text/x-template')#slider-buttons
@@ -45,12 +41,12 @@ script(type='text/x-template')#slider-buttons
 			transition-group(tag='div' name='slide-button-anim-prev').slider-anim-container
 				.works-slider__bg-button(
 					:key='getNewArray("next").photo' 
-					:style="{ 'background-image': 'url(' + getNewArray('prev').photo + ')' }"
+					:style="{ 'background-image': 'url(http://webdev-api.loftschool.com/' + getNewArray('prev').photo + ')' }"
 				)
 
 		button.works-slider__button.works-slider__next(type='submit' @click='slide("next")')
 			transition-group(tag='div' name='slide-button-anim-next').slider-anim-container
 				.works-slider__bg-button(
 					:key='getNewArray("next").photo' 
-					:style="{ 'background-image': 'url(' + getNewArray('next').photo + ')' }"
+					:style="{ 'background-image': 'url(http://webdev-api.loftschool.com/' + getNewArray('next').photo + ')' }"
 				)

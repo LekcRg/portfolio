@@ -1,0 +1,7 @@
+script(type='text/x-template')#blog-nav
+	aside.blog__aside
+		button.blog__nav(type="submit" @click='openMenu')
+		.blog__aside-sticky
+			ul.blog-nav__list
+				li.blog-nav__item(v-for='post in posts')
+					a.blog-nav__link(href="#") {{post.title}}

@@ -1,4 +1,7 @@
 import Vue from "vue";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://webdev-api.loftschool.com/";
 
 const skill = {
   template: "#skill",
@@ -50,7 +53,8 @@ const skillsRow = {
     skill
   },
   props: {
-    skill: Object
+    skills: Array,
+    type: Object
   }
 };
 
@@ -60,11 +64,21 @@ new Vue({
     skillsRow
   },
   data: {
-    skills: {}
+    skills: [],
+    types: [
+      { id: 0, title: "Frontend" },
+      { id: 1, title: "Backend" },
+      { id: 2, title: "Workflow" }
+    ]
   },
   created() {
-    const data = require("../../../skills.json");
-    this.skills = data;
+    axios.get("/skills/23").then(response => {
+      this.skills = response.data;
+      console.log(response.data);
+    });
+  },
+  mounted() {
+    console.log(this.skills);
   },
   template: "#skills-list"
 });

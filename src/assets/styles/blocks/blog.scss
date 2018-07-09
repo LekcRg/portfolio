@@ -42,14 +42,16 @@
 	&__aside {
 		width: 25%;
 		transition: left .4s ease;
+		z-index: 999;
 		@media screen and (max-width: $tablet) {
 			position: fixed;
+			width: 230px;
+			max-width: 100%;
 			background: $green;
 			box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
 			top: 0;
-			left: -25%;
+			left: -230px;
 			height: 100%;
-			z-index: 99;
 		}
 		&--active {
 			left: 0;
@@ -142,6 +144,7 @@
 		& p {
 			margin-bottom: 20px;
 			line-height: 1.7;
+			white-space: pre-wrap;
 		}
 		&::after {
 			content: '';

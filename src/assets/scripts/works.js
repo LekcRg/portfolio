@@ -3,17 +3,26 @@ import "./modules/nav";
 import "./modules/slider";
 import "./modules/preloader";
 import { blur } from "./modules/blur";
+import axios from "axios";
 
 const worksValidate = new Vue({
   el: ".works-form",
   data: {
-    name: null,
-    mail: null,
-    message: null
+    form: {
+      name: "",
+      mail: "",
+      message: ""
+    },
+    response: ""
   },
   methods: {
-    validateWorksForm: e => {
-      console.log("form work");
+    validateWorksForm() {
+      const link = "http://loftschool.ozpkmsimply.tmweb.ru/feedback.php";
+
+      axios.post(link, this.form).then(response => {
+        console.log(response.data);
+        this.response = response.data;
+      });
     },
     addErrorClass: e => {
       e.target.classList.add("works__form--error");

@@ -1,18 +1,22 @@
 <template lang="pug">
-  tr(v-if='editmode === false')
-    td 
-      h3 {{post.title}}
-    td
-      h3 {{post.date}}
-    td
-      span {{post.content}}
-    td
-      button(@click='removePost') Delete
+  post(v-if='editmode === false')
+    tr
+      td 
+        h3 {{post.title}}
+      td
+        h3 {{post.date}}
+      td
+        span {{post.content}}
+      td
+        button(@click='removePost') Delete
 
   .post(v-else)
-    input(type='text' placeholder='Title' v-model='newPost.title')
-    input(type='text' placeholder='Date' v-model='newPost.date')
-    textarea(placeholder='Content' v-model='newPost.content')
+    .post-line
+      input(type='text' placeholder='Title' v-model='newPost.title')
+      input(type='text' placeholder='Date' v-model='newPost.date')
+    .post-line
+      textarea(placeholder='Content' v-model='newPost.content')
+    .post-line
     button(@click='addPost') Add
 </template>
 
@@ -42,7 +46,11 @@ export default {
   methods: {
     ...mapActions(["addNewPost", "removeOldPost"]),
     addPost() {
-      this.addNewPost(this.newPost);
+      this.addNewPost(this.newPost).then(e => {
+        this.newPost.title = "";
+        this.newPost.date = "";
+        this.newPost.content = "";
+      });
     },
     removePost() {
       this.removeOldPost(this.post);
@@ -50,3 +58,21 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.post-line {
+  display: flex;
+  & input,
+  & textarea {
+    width: 100%;
+    padding: 5px;
+  }
+  & textarea {
+    min-height: 100px;
+    margin-bottom: 10px;
+  }
+  & input {
+    margin: 10px 0;
+  }
+}
+</style>
