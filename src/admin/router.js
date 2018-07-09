@@ -12,7 +12,7 @@ import nav from "./components/nav";
 
 const routes = [
   {
-    path: "/",
+    path: "/admin",
     components: {
       default: skills,
       header: header,
@@ -20,7 +20,7 @@ const routes = [
     }
   },
   {
-    path: "/works",
+    path: "/admin/works",
     components: {
       default: works,
       header: header,
@@ -28,7 +28,7 @@ const routes = [
     }
   },
   {
-    path: "/blog",
+    path: "/admin/blog",
     components: {
       default: blog,
       header: header,
