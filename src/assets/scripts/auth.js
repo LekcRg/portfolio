@@ -1,28 +1,36 @@
-//preloader (import "./modules/preloader"; выдает ошибку)
-const preloaderContainer = document.querySelector(".preloader"),
-  preloaderAnim = document.querySelector(".preloader__icon");
+import "./modules/preloader";
+import Vue from "vue";
+// import axios from "axios";
 
-window.onload = () => {
-  preloaderAnim.addEventListener(
-    "animationiteration",
-    function(e) {
-      preloaderAnim.classList.remove("preloader__animation");
-      addAnimFinish();
-    },
-    false
-  );
-};
+new Vue({
+  el: "#login-form",
+  data() {
+    return {
+      user: {
+        name: "",
+        password: ""
+      }
+    };
+  },
+  methods: {
+    login() {
+      axios
+        .post("http://webdev-api.loftschool.com/login", this.user)
+        .then(response => {
+          if (response.status === 200) {
+            const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
+            localStorage.setItem("token", response.data.token);
+            localStorage.setItem("ttl", ttl);
 
-function addAnimFinish() {
-  setTimeout(() => {
-    preloaderAnim.classList.add("preloader--done");
-    preloaderContainer.style.opacity = 0;
-  }, 100);
-  setTimeout(() => {
-    preloaderContainer.style.display = "none";
-  }, 1100);
-}
-//finish preloader
+            window.location.href = "/admin";
+          }
+        });
+    }
+  },
+  template: "#login-template"
+});
+
+///////////////////////////////////////
 
 const authBtn = document.querySelector("#welcome__btn-auth");
 const welcomeWrapper = document.querySelector(".welcome");

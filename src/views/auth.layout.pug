@@ -20,5 +20,7 @@ html(lang="en")
 		block content
 		include ./common/welcome-footer.pug
 		
-	script(src="./bootloader.bundle.js")
-	script(src="./auth.bundle.js")
+	include ./components/entry.pug
+	script(src="bootloader.bundle.js")
+	script(src='vendor.bundle.js')
+	script(src="auth.bundle.js")

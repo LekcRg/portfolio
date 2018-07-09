@@ -1,13 +1,44 @@
 <template lang="pug">
-  app-title
+#root
+  router-view(name='header')
+  router-view(name='nav')
+  .content
+    router-view
 </template>
 
 <script>
-export default {
-  components: {
-    appTitle: require("./components/title").default
-  }
-};
+export default {};
 </script>
-<style>
+
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  font-family: "Roboto";
+  height: 100%;
+}
+.wrapper {
+  background: url("./bg.jpg") center / cover;
+}
+.wrapper,
+#root {
+  height: 100%;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: block;
+  width: 100%;
+  padding: 30px;
+  color: #566358;
+}
 </style>
