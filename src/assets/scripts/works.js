@@ -2,6 +2,7 @@ import Vue from "vue";
 import "./modules/nav";
 import "./modules/slider";
 import "./modules/preloader";
+import { blur } from "./modules/blur";
 
 const worksValidate = new Vue({
   el: ".works-form",
@@ -27,3 +28,13 @@ const worksValidate = new Vue({
     }
   }
 });
+
+// Blur
+console.log("sdfasf");
+
+blur.set();
+
+window.onresize = () => {
+  blur.set();
+  console.log("sadf");
+};
