@@ -1,6 +1,6 @@
 import "./modules/preloader";
 import Vue from "vue";
-// import axios from "axios";
+import axios from "axios";
 
 new Vue({
   el: "#login-form",
@@ -14,17 +14,28 @@ new Vue({
   },
   methods: {
     login() {
-      axios
-        .post("http://webdev-api.loftschool.com/login", this.user)
-        .then(response => {
-          if (response.status === 200) {
-            const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
-            localStorage.setItem("token", response.data.token);
-            localStorage.setItem("ttl", ttl);
+      const authLogin = document.querySelector("#auth-login");
+      const authPass = document.querySelector("#auth-pass");
+      const captchaCheckbox = document.querySelector("#captcha-checkbox");
+      const captchaRadio = document.querySelector(".welcome__input-radio");
+      if (
+        authLogin.value &&
+        authPass.value &&
+        captchaCheckbox.checked &&
+        captchaRadio.checked
+      ) {
+        axios
+          .post("http://webdev-api.loftschool.com/login", this.user)
+          .then(response => {
+            if (response.status === 200) {
+              const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
+              localStorage.setItem("token", response.data.token);
+              localStorage.setItem("ttl", ttl);
 
-            window.location.href = "/admin";
-          }
-        });
+              window.location.href = "/admin";
+            }
+          });
+      }
     }
   },
   template: "#login-template"
@@ -135,10 +146,25 @@ loginForm.addEventListener("submit", function(ev) {
   const authPass = document.querySelector("#auth-pass");
   const captchaCheckbox = document.querySelector("#captcha-checkbox");
   const captchaLabel = document.querySelector(".welcome__checkbox");
+  const captchaRadio = document.querySelector(".welcome__input-radio");
+  const captchaError = document.querySelector("#auth-captcha-error");
+  console.log(captchaError);
 
-  if (!captchaCheckbox.checked) {
-    captchaLabel.classList.add("color-red");
+  if (!captchaCheckbox.checked || !captchaRadio.checked) {
+    captchaError.classList.add("input__error--on");
   }
+
+  captchaCheckbox.addEventListener("click", ev => {
+    if (captchaCheckbox.checked && captchaRadio.checked) {
+      captchaError.classList.remove("input__error--on");
+    }
+  });
+
+  captchaRadio.addEventListener("click", ev => {
+    if (captchaCheckbox.checked && captchaRadio.checked) {
+      captchaError.classList.remove("input__error--on");
+    }
+  });
 
   validateInput(authLogin);
   validateInput(authPass);

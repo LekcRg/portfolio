@@ -25,12 +25,16 @@ script(type='text/x-template')#login-template
 						.input__error#auth-pass--error Вы не ввели пароль
 
 					input.welcome__input-checkbox(type='checkbox' name='captcha' id='captcha-checkbox')
-					label.welcome__label.welcome__checkbox(for='captcha-checkbox') Я человек
+					label.welcome__label.welcome__checkbox(for='captcha-checkbox') 
+						span Я человек
+
 					.welcome__radio-row
 						input.welcome__input-radio(type="radio" name='radio-captcha' id='yes' value='yes')
 						label.welcome__label.label__radio(for='yes') Да
 						input.welcome__input-radio(type="radio" name='radio-captcha' id='no' value='no')
 						label.welcome__label.label__radio(for='no') Не уверен
+						.input__error#auth-captcha-error Нам нужен человек
+
 					.navigation
 						ul.navigation__list
 							li.navigation__item

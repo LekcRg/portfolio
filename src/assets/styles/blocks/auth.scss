@@ -87,7 +87,7 @@
 	position: relative;
 	margin-right: 60px;
 	white-space: nowrap;
-	&:last-child {
+	&:nth-last-child(2) {
 		margin-right: 0;
 	}
 	&::before {
@@ -163,3 +163,9 @@
 .welcome__checkbox {
 	transition: color .4s ease;
 }
+
+.input__error--on {
+		opacity: 1;
+		visibility: visible;
+		bottom: 10px;
+	}
