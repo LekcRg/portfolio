@@ -1,6 +1,6 @@
 <template lang="pug">
   post(v-if='editmode === false')
-    tr
+    tr 
       td 
         h3 {{post.title}}
       td

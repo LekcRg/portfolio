@@ -4,6 +4,10 @@ import axios from "axios";
 
 Vue.use(VueRouter);
 
+const guard = axios.create({
+  baseURL: "http://webdev-api.loftschool.com"
+});
+
 import skills from "./components/skills";
 import works from "./components/works";
 import blog from "./components/blog";
@@ -12,7 +16,7 @@ import nav from "./components/nav";
 
 const routes = [
   {
-    path: "/admin",
+    path: "/",
     components: {
       default: skills,
       header: header,
@@ -20,7 +24,7 @@ const routes = [
     }
   },
   {
-    path: "/admin/works",
+    path: "/works",
     components: {
       default: works,
       header: header,
@@ -28,7 +32,7 @@ const routes = [
     }
   },
   {
-    path: "/admin/blog",
+    path: "/blog",
     components: {
       default: blog,
       header: header,
@@ -39,10 +43,6 @@ const routes = [
 
 const router = new VueRouter({ routes });
 
-const guard = axios.create({
-  baseURL: "http://webdev-api.loftschool.com"
-});
-
 router.beforeEach((to, from, next) => {
   guard
     .get("/user", {
@@ -52,10 +52,13 @@ router.beforeEach((to, from, next) => {
     })
     .then(response => {
       next();
+      console.log("xx");
     })
     .catch(error => {
+      console.log("error in router");
+      // localStorage.removeItem("token");
       window.location.href = "//google.com";
     });
 });
 
-export default new VueRouter({ routes, mode: "history" });
+export default router;
