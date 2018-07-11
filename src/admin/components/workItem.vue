@@ -1,21 +1,58 @@
 <template lang="pug">
-  tr(v-if='editmode === false')
-    td 
-      img(:src='"http://webdev-api.loftschool.com/" + work.photo' alt='workd-img').works__img
-    td
-      h3 {{work.title}}
-    td
-      span {{work.techs}}
-    td
-      button(@click='removeWork') Delete
+.works__preview(v-if='editmode === false')
+  img(:src='"http://webdev-api.loftschool.com/" + work.photo' alt='workd-img').works__img
+  .works__info
+    h3.works__title {{work.title}}
+    span.works__techs {{work.techs}}
+    button.button(@click='removeWork') Удалить
 
-  .works(v-else)
-    input(type='text' placeholder='Title' v-model='newWork.title')
-    input(type='text' placeholder='Techs' v-model='newWork.techs')
-    input(type='text' placeholder='Link' v-model='newWork.link')
-    input(type='file' @change='addPhoto')
-    button(@click='addWork') Add
+.works__add(v-else)
+  span.works__text Добавить работу
+  input.works__input(type='text' placeholder='Название' v-model='newWork.title')
+  input.works__input(type='text' placeholder='Технологии' v-model='newWork.techs')
+  input.works__input(type='text' placeholder='Ссылка на проект' v-model='newWork.link')
+  input(type='file' @change='addPhoto')
+  button(@click='addWork').button Добавить
 </template>
+
+<style lang="scss">
+.works {
+  &__add {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+  }
+  &__img {
+    max-height: 200px;
+  }
+  &__input {
+    margin-top: 30px;
+    width: 300px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &__preview {
+    display: flex;
+    margin-top: 40px;
+    width: 50%;
+    @media screen and (max-width: 420px) {
+      width: 100%;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 30px;
+  }
+  &__title,
+  &__techs {
+    margin-bottom: 15px;
+  }
+}
+</style>
 
 <script>
 import { mapActions } from "vuex";
@@ -68,9 +105,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-.works__img {
-  max-height: 200px;
-}
-</style>

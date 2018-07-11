@@ -3,7 +3,7 @@ header.header
   .header__title-wrapper
     h1.header__title Панель администрирования
   .header__back-wrapper
-    a.admin__back(href='#') Вернуться на сайт
+    a.header__back(href='/') Вернуться на сайт
 </template>
 
 <style lang="scss">
@@ -16,6 +16,7 @@ header.header
   padding: 30px;
   display: flex;
   align-items: center;
+  overflow: hidden;
   &__title {
     font-weight: 400;
     font-size: 28px;
@@ -25,6 +26,9 @@ header.header
     transition: color 0.4s ease;
     &-wrapper {
       margin-left: auto;
+      @media screen and (max-width: 420px) {
+        visibility: hidden;
+      }
     }
     &:hover {
       color: #fff;

@@ -40,8 +40,22 @@ export default {
 
 <style lang="scss">
 .skills {
+  width: 50%;
+  @media screen and (max-width: 420px) {
+    width: 100%;
+  }
   &__row {
     margin-bottom: 20px;
+  }
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  &__table {
+    & td {
+      padding: 15px;
+    }
   }
 }
 </style>

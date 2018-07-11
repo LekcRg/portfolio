@@ -19,11 +19,28 @@ const blog = {
     addNewPost({ commit }, post) {
       console.log(post);
 
-      return this.$axios.post("/posts", post).then(response => {
-        commit("addPostsToState", response.data);
+      return this.$axios
+        .post("/posts", post)
+        .then(response => {
+          commit("addPostsToState", response.data);
 
-        console.log("sdfasdf!", response);
-      });
+          console.log("sdfasdf!", response);
+          if (response.status === 201) {
+            const modal = document.querySelector(".modal");
+            const modalText = modal.querySelector(".modal__text");
+
+            modalText.innerText = "Запись успешно добавлена";
+            modal.classList.add("modal--active");
+          }
+        })
+        .catch(er => {
+          console.error(er);
+          const modal = document.querySelector(".modal");
+          const modalText = modal.querySelector(".modal__text");
+
+          modalText.innerText = er;
+          modal.classList.add("modal--active");
+        });
     },
     fetchPosts({ commit }) {
       return this.$axios.get("/posts/23").then(response => {
@@ -33,10 +50,27 @@ const blog = {
     removeOldPost({ commit }, post) {
       console.log(post);
 
-      return this.$axios.delete("/posts/" + post.id).then(response => {
-        console.log("asdfasdf!", response);
-        commit("deletePostsToState", post);
-      });
+      return this.$axios
+        .delete("/posts/" + post.id)
+        .then(response => {
+          console.log("asdfasdf!", response);
+          commit("deletePostsToState", post);
+          if (response.status === 200) {
+            const modal = document.querySelector(".modal");
+            const modalText = modal.querySelector(".modal__text");
+
+            modalText.innerText = "Запись успешно удалена";
+            modal.classList.add("modal--active");
+          }
+        })
+        .catch(er => {
+          console.error(er);
+          const modal = document.querySelector(".modal");
+          const modalText = modal.querySelector(".modal__text");
+
+          modalText.innerText = er;
+          modal.classList.add("modal--active");
+        });
     }
   }
 };

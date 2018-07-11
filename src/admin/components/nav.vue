@@ -5,6 +5,8 @@
       li.nav__item(v-for='tab in tabs')
         router-link.nav__link(
           :to='tab.href'
+          :key='tab.title'
+          @click='currentTab = tab.title'
         ) {{tab.title}}
 </template>
 
@@ -12,6 +14,7 @@
 export default {
   data() {
     return {
+      currentTab: "Обо мне",
       tabs: [
         { title: "Обо мне", href: "/" },
         { title: "Работы", href: "/works" },
@@ -34,6 +37,14 @@ export default {
   }
   &__item {
     display: inline-flex;
+    border-right: 2px solid #fff;
+    @media screen and (max-width: 420px) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
   }
   &__link {
     color: #566358;
@@ -41,14 +52,14 @@ export default {
     padding: 25px 70px;
     text-decoration: none;
     transition: all 0.5s ease;
-    &--active {
-      color: #6c9c5a;
-      background: #fff;
-    }
     &:hover {
       color: #6c9c5a;
       background: #fff;
     }
   }
+}
+.router-link-exact-active {
+  color: #6c9c5a;
+  background: #fff;
 }
 </style>

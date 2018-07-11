@@ -1,0 +1,33 @@
+script(type='text/x-template')#blog
+	section.blog
+		h2.visually-hidden Блог
+		blog-nav(
+			:posts='posts'
+			:currentPost='currentPost'
+			)
+		blog-posts(:posts='posts')
+
+script(type='text/x-template')#blog-navigation
+	aside.blog__aside
+		button.blog__nav(type="submit" @click='openMenu')
+		.blog__aside-sticky
+			ul.blog-nav__list
+				li.blog-nav__item(v-for='post in posts')
+					a.blog-nav__link(
+						href="#"
+						:key='currentPost.id'
+						:class='{ "blog-nav__link--active" : currentPost.id === post.id }'
+						:id='"post-" + post.id'
+						@click.prevent='scrollNav'
+					) {{post.title}}
+
+script(type='text/x-template')#blog-post
+	.blog__news
+		article.blog-post(
+			v-for='post in posts'
+			:id='"post-" + post.id'
+		)
+			header.blog-post__header
+				h2.blog-post__title {{post.title}}
+				time.blog-post__date {{post.created_at}}
+				p {{post.content}}

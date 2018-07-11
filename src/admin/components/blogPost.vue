@@ -1,23 +1,19 @@
 <template lang="pug">
-  post(v-if='editmode === false')
-    tr 
-      td 
-        h3 {{post.title}}
-      td
-        h3 {{post.date}}
-      td
-        span {{post.content}}
-      td
-        button(@click='removePost') Delete
+  .post__preview(v-if='editmode === false')
+    h3.post__title {{post.title}}
+    span.post__date {{post.created_at}}
+    p.post__text {{post.content}}
+    button.button(@click='removePost') Удалить
 
-  .post(v-else)
+  .post__add(v-else)
     .post-line
-      input(type='text' placeholder='Title' v-model='newPost.title')
-      input(type='text' placeholder='Date' v-model='newPost.date')
+      input.post__input(type='text' placeholder='Название' v-model='newPost.title')
     .post-line
-      textarea(placeholder='Content' v-model='newPost.content')
+      input.post__input(type='text' placeholder='Дата' v-model='newPost.date')
     .post-line
-    button(@click='addPost') Add
+      textarea.post__textarea(placeholder='Содержание' v-model='newPost.content')
+    .post-line
+    button.button(@click='addPost') Добавить
 </template>
 
 <script>
@@ -59,20 +55,46 @@ export default {
 };
 </script>
 
+
 <style lang="scss">
 .post-line {
-  display: flex;
-  & input,
-  & textarea {
-    width: 100%;
+  margin-bottom: 20px;
+  &:last-child {
+    margin-bottom: 30px;
+  }
+}
+.post {
+  &__input {
+    width: 300px;
+  }
+  &__textarea {
+    width: 500px;
+    min-height: 160px;
+    resize: vertical;
+    @media screen and (max-width: 420px) {
+      width: 100%;
+    }
+  }
+  &__text {
+    white-space: pre-wrap;
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+  &__preview {
+    margin-top: 30px;
+    border: 1px solid #9f9f9f;
     padding: 5px;
+    border-radius: 5px;
+    &:first-child {
+      margin-top: 45px;
+    }
   }
-  & textarea {
-    min-height: 100px;
-    margin-bottom: 10px;
+  &__title {
+    margin-bottom: 8px;
   }
-  & input {
-    margin: 10px 0;
+  &__date {
+    font-size: 12px;
+    color: #999;
   }
 }
 </style>

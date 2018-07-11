@@ -1,13 +1,22 @@
 <template lang="pug">
-  .works
-    h1 Мои работы
-    worksItem(
-      v-for='work in works'
-      :work='work'
-    )
-    worksItem(:editmode="true")
+  .works-wrapper
+    h1.tab__title Мои работы
+    .works
+      worksItem(:editmode="true")
+      worksItem(
+        v-for='work in works'
+        :work='work'
+      )
 
 </template>
+
+<style lang="scss">
+.works {
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>
+
 
 <script>
 import worksItem from "./workItem";

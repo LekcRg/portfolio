@@ -1,19 +1,40 @@
 <template lang="pug">
   tr(v-if='editmode === false')
-    td {{skill.title}}
-    td
+    td.td-title {{skill.title}}
+    td.td-percent.percent-padding
       span {{skill.percents}}%
     td
-      button(@click='removeSkill') Delete
+      button(@click='removeSkill').button.button-skills Удалить
 
   tr(v-else)
-    td 
+    td.td-title
       input(type='text' placeholder='Название' v-model='newSkill.title')
+    td.percent-padding
+      input.input__percent(type='text' placeholder='%' v-model='newSkill.percents' maxlength="3")
     td
-      input(type='text' placeholder='Проценты' v-model='newSkill.percents')
-    td
-      button(@click='addSkill') Add
+      button(@click='addSkill').button.button-skills Добавить
 </template>
+
+<style lang="scss">
+.input__percent {
+  width: 68px;
+  text-align: center;
+}
+.td-percent {
+  text-align: center;
+}
+.button-skills {
+  width: 90px;
+  margin-left: 10px;
+}
+.percent-padding {
+  padding-left: 10px;
+}
+.td-title {
+  padding-left: 20px;
+}
+</style>
+
 
 <script>
 import { mapActions, mapState } from "vuex";

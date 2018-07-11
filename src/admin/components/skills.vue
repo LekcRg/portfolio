@@ -1,13 +1,14 @@
 <template lang="pug">
   .skills-container
-    button(@click='refresh') refreshToken
-    h1 Страница обо мне
-    skills-row(
-      v-for='type in types'
-      :key='type.name'
-      :type='type'
-      :skills='skills'
-    )
+    // button(@click='refresh') refreshToken
+    h1.tab__title Страница обо мне
+    .skills-wrap
+      skills-row(
+        v-for='type in types'
+        :key='type.name'
+        :type='type'
+        :skills='skills'
+      )
 </template>
 
 <script>
@@ -24,7 +25,8 @@ export default {
         { id: 0, name: "Frontend" },
         { id: 1, name: "Backend" },
         { id: 2, name: "WorkFlow" }
-      ]
+      ],
+      error: "ашипка"
     };
   },
   computed: {
@@ -46,4 +48,8 @@ export default {
 
 
 <style lang="scss">
+.skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
 </style>
