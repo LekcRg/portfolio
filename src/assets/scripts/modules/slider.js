@@ -1,7 +1,7 @@
 import Vue from "vue";
-import axios from "axios";
+// import axios from "axios";
 
-axios.defaults.baseURL = "http://webdev-api.loftschool.com/";
+// axios.defaults.baseURL = "http://webdev-api.loftschool.com/";
 
 const buttons = {
   template: "#slider-buttons",
@@ -100,10 +100,12 @@ new Vue({
     }
   },
   created() {
-    axios.get("/works/23").then(response => {
-      this.works = response.data;
-      this.currentWork = this.works[0];
-    });
+    // axios.get("/works/23").then(response => {
+    //   this.works = response.data;
+    //   this.currentWork = this.works[0];
+    // });
+    this.works = require("../../../works.json");
+    this.currentWork = this.works[0];
   },
   methods: {
     handleSlide(direction) {

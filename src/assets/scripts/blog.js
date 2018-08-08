@@ -1,9 +1,9 @@
 import Vue from "vue";
-import axios from "axios";
+// import axios from "axios";
 import "./modules/nav";
 import "./modules/preloader";
 
-axios.defaults.baseURL = "http://webdev-api.loftschool.com/";
+// axios.defaults.baseURL = "http://webdev-api.loftschool.com/";
 
 const blogNav = {
   template: "#blog-navigation",
@@ -61,10 +61,12 @@ new Vue({
     currentPost: {}
   },
   created() {
-    axios.get("/posts/23").then(response => {
-      this.posts = response.data;
-      this.currentPost = response.data[0];
-    });
+    // axios.get("/posts/23").then(response => {
+    //   this.posts = response.data;
+    //   this.currentPost = response.data[0];
+    // });
+    this.posts = require("../../blog.json");
+    this.currentPost = this.posts[0];
     window.addEventListener("scroll", this.superNav);
   },
   methods: {

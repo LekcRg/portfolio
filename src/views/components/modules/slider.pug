@@ -32,7 +32,7 @@ script(type='text/x-template')#slider-info
 
 script(type='text/x-template')#slider-pic
 	transition-group(name='slide-img-anim' tag='div').works-slider__img-container
-		img(:src='"http://webdev-api.loftschool.com/" + work.photo' :key='work.photo' alt="work-1").works-slider__img
+		img(:src='work.photo' :key='work.photo' alt="work-1").works-slider__img
 
 
 script(type='text/x-template')#slider-buttons
@@ -41,12 +41,12 @@ script(type='text/x-template')#slider-buttons
 			transition-group(tag='div' name='slide-button-anim-prev').slider-anim-container
 				.works-slider__bg-button(
 					:key='getNewArray("next").photo' 
-					:style="{ 'background-image': 'url(http://webdev-api.loftschool.com/' + getNewArray('prev').photo + ')' }"
+					:style="{ 'background-image': 'url(' + getNewArray('prev').photo + ')' }"
 				)
 
 		button.works-slider__button.works-slider__next(type='submit' @click='slide("next")')
 			transition-group(tag='div' name='slide-button-anim-next').slider-anim-container
 				.works-slider__bg-button(
 					:key='getNewArray("next").photo' 
-					:style="{ 'background-image': 'url(http://webdev-api.loftschool.com/' + getNewArray('next').photo + ')' }"
+					:style="{ 'background-image': 'url(' + getNewArray('next').photo + ')' }"
 				)

@@ -40,8 +40,15 @@ const skills = {
           console.error(er);
           const modal = document.querySelector(".modal");
           const modalText = modal.querySelector(".modal__text");
+          const errors = er.response.data.errors;
+          console.log(errors);
 
-          modalText.innerText = er;
+          for (let error in errors) {
+            console.log(error);
+          }
+
+          modalText.innerText = er.response.data.errors.percents;
+
           modal.classList.add("modal--active");
         });
     },

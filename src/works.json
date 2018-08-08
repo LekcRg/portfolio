@@ -1,30 +1,23 @@
 [
 	{
 		"id": 1,
-		"title": "1 Сайт школы онлайн образования",
-		"skills": "Тут один текст",
-		"photo": "/assets/images/work-1.png",
-		"link": "//google.com"
+		"title": "Афродита фитнес",
+		"techs": "HTML5, CSS3",
+		"photo": "/assets/images/fitnes.png",
+		"link": "http://fitness.slow.im"
 	},
 	{
 		"id": 2,
-		"title": "2 Сайт школы онлайн образования",
-		"skills": "Другие скилы",
-		"photo": "/assets/images/work-2.png",
-		"link": "//yandex.ru"
+		"title": "Mr. Burger",
+		"techs": "HTML5, SCSS, JS, JQuery, Адаптивная верстка",
+		"photo": "/assets/images/burger.png",
+		"link": "http://burgers.slow.im/"
 	},
 	{
 		"id": 3,
-		"title": "3 Сайт школы онлайн образования",
-		"skills": "Смотрю анимашки",
-		"photo": "/assets/images/work-3.png",
-		"link": "//rambler.ru"
-	},
-	{
-		"id": 4,
-		"title": "4 Сайт школы онлайн образования",
-		"skills": "Вроде работает :)",
-		"photo": "/assets/images/work-4.png",
-		"link": "//vk.com"
+		"title": "Сайт-Портфолио",
+		"techs": "Pug, SCSS, JS, Vue, Axios, Адаптивная верстка",
+		"photo": "/assets/images/portfolio.png",
+		"link": "/"
 	}
 ]

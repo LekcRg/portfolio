@@ -1,7 +1,7 @@
 import Vue from "vue";
-import axios from "axios";
+// import axios from "axios";
 
-axios.defaults.baseURL = "http://webdev-api.loftschool.com/";
+// axios.defaults.baseURL = "http://webdev-api.loftschool.com/";
 
 const skill = {
   template: "#skill",
@@ -67,15 +67,17 @@ new Vue({
     skills: [],
     types: [
       { id: 0, title: "Frontend" },
-      { id: 1, title: "Backend" },
-      { id: 2, title: "Workflow" }
+      // { id: 1, title: "Backend" },
+      { id: 1, title: "Workflow" }
     ]
   },
   created() {
-    axios.get("/skills/23").then(response => {
-      this.skills = response.data;
-      console.log(response.data);
-    });
+    // axios.get("/skills/23").then(response => {
+    //   this.skills = response.data;
+    //   console.log(response.data);
+    // });
+    this.skills = require("../../../skills.json");
+    console.log(this.skills);
   },
   mounted() {
     console.log(this.skills);
