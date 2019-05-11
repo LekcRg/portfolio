@@ -1,0 +1,30 @@
+[
+	{
+		"id": 1,
+		"title": "1 Сайт школы онлайн образования",
+		"skills": "Тут один текст",
+		"photo": "/assets/images/work-1.png",
+		"link": "//google.com"
+	},
+	{
+		"id": 2,
+		"title": "2 Сайт школы онлайн образования",
+		"skills": "Другие скилы",
+		"photo": "/assets/images/work-2.png",
+		"link": "//yandex.ru"
+	},
+	{
+		"id": 3,
+		"title": "3 Сайт школы онлайн образования",
+		"skills": "Смотрю анимашки",
+		"photo": "/assets/images/work-3.png",
+		"link": "//rambler.ru"
+	},
+	{
+		"id": 4,
+		"title": "4 Сайт школы онлайн образования",
+		"skills": "Вроде работает :)",
+		"photo": "/assets/images/work-4.png",
+		"link": "//vk.com"
+	}
+]
