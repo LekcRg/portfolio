@@ -1,0 +1,24 @@
+script(type='text/x-template')#skills-list
+	.skills
+		ul.skills__row-list
+			li.skills__row-item(
+				v-for="type in types"
+				)
+				skills-row(:type='type' :skills='skills')
+
+script(type='text/x-template')#skill-row
+	.skills__row
+		h4.skills__title {{type.title}}
+		ul.skills__list
+			li.skills__item(
+				v-for='skill in skills'
+				v-if='skill.category == type.id'
+				)
+				skill(:skillName='skill.title' :skillPercents='skill.percents')
+
+script(type='text/x-template')#skill
+	figure.skills__circle-wrapper
+		svg.skills__circle(viewBox="0 0 100 100" preserveAspectRatio="none")
+			circle(cx="50" cy="50" r="40").skills__circle.skills__circle_under
+			circle(cx="50" cy="50" r="40" ref='color-circle').skills__circle.skills__circle_above
+		span.skills__circle-text {{skillName}}

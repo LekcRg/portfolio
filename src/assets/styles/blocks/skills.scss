@@ -1,0 +1,60 @@
+.skills {
+	
+	&__row {
+		margin-right: -30px;
+	}
+	&__title {
+		color: $grey;
+		font-size: 28px;
+		font-weight: 500;
+	}
+	.skills__circle {
+		fill: transparent;
+		transform: rotate(-45deg);
+		stroke-width: 17px;
+		transform-origin: center;
+		max-width: 100%;
+		&-wrapper {
+			width: 110px;
+			height: 110px;
+			margin: 0;
+			margin-top: 15px;
+			padding: 0;
+			position: relative;
+			display: inline-block;
+			margin-right: 35px;
+		}
+		&_under {
+			stroke: #dfdcd5;
+		}
+		&_above {
+			stroke: $green;
+			stroke-dasharray: 251;
+			stroke-dashoffset: 251;
+			transition-delay: .1s;
+			transition: stroke-dashoffset .4s ease;
+		}
+		&-text {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $green;
+			font-size: 13px;
+			font-weight: 500;
+			position: absolute;
+			top: 0;left: 0;right: 0;bottom: 0;
+			margin: auto;
+			width: 70px;
+			height: 70px;
+			padding: 5px;
+			text-align: center;
+		}
+	}
+}
+.skills__list {
+	display: flex;
+	flex-wrap: wrap;
+	@media screen and (max-width: $tablet) {
+		justify-content: center;
+	}
+}

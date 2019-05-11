@@ -1,0 +1,23 @@
+extends ../main.layout.pug
+
+block variables
+	- var title = 'Блог'
+	- var bg = 'blog-bg'
+	-
+		var blogNav =
+		[
+			['Самое важное в SASS', '#post-sass'],
+			['Приёмы в вёрстке, без которыхне обходится ни один сайт', '#post-imposition'],
+			['Самый необходимый набор Gulp плагинов', '#post-gulp'],
+			['Почему я выбрал Jade', '#post-jade']
+		]
+
+block scripts
+	script(src='blog.bundle.js')
+
+block heroContant
+	h1.blog__title.title-strip Блог
+	span.blog__description Статьи, которые я написал
+
+block content
+	#blogx

@@ -1,0 +1,186 @@
+.about {
+	display: flex;
+	position: relative;
+	&__bg-left {
+		fill: #ebefe2!important;
+	}
+	&__bg-right {
+		fill: #f4f5f0!important;
+		@media screen and (max-width: $tablet) {
+			fill: #ebefe2!important;
+		}
+	}
+	@media screen and (max-width: $tablet) {
+		flex-direction: column;
+	}
+}
+#map {
+	position: absolute!important;
+	top: 0;left: 0;	right: 0;	bottom: 0;
+	z-index: 0;
+}
+
+.about__left, .about__right {
+	width: 50%;
+	position: relative;
+	padding: 0 35px;
+	@media screen and (max-width: $tablet) {
+		width: 100%;
+		padding: 0 5%;
+	}
+	@media screen and (max-width: $phone) {
+		padding: 0 4%;
+	}
+}
+.about__left {
+	background-color: #ebefe2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: $black;
+	padding-bottom: 30px;
+	@media screen and (min-width: $desktop) {
+		flex-direction: row;
+		align-items: flex-start;
+		padding-right: 20px;
+	}
+	&-title {
+		font-family: 'Sansus';
+		font-size: 63px;
+		text-align: center;
+		text-transform: uppercase;
+		position: relative;
+		width: 100%;
+		z-index: 1;
+		@media screen and (min-width: $desktop) {
+			width: 50%;
+		}
+		@media screen and (max-width: $tablet) {
+			margin-top: 45px;
+		}
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;left: 0;right: 0;bottom: 0;
+			margin: auto;
+			margin-top: -7%;
+			width: 100%;
+			height: 150%;
+			background-size: contain;
+			background: svg-load('about_header.svg', fill=rgba(#93c42e, .15)) no-repeat center;
+			z-index: -1;
+		}
+	}
+	&-small-title {
+		margin-bottom: 35px;
+		&::after {
+			bottom: -10px;
+		}
+	}
+	&-wrapper {
+		margin-top: 30px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 450px;
+		& p {
+			color: $grey;
+			margin-top: 15px;
+		}
+		@media screen and (min-width: $desktop) {
+			width: 50%;
+		}
+	}
+	&-img {
+		width: 100%;
+		max-width: 440px;
+		text-align: center;
+		margin-bottom: 25px;
+	}
+}
+.about__right {
+	background-color: #f4f5f0;
+	padding-bottom: 30px;
+	&-text-wrapper {
+		color: $grey;
+		& p {
+			margin-top: 30px;
+			margin-bottom: 55px;
+		}
+	}
+	&-title {
+		margin-top: 20px;
+		&::after {
+			bottom: -10px;
+			background: $grey;
+		}
+	}
+	@media screen and (max-width: $tablet) {
+		text-align: center;
+	}
+}
+.contacts {
+	display: flex;
+	height: 100vh;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	background: url(./assets/images/map.jpg) no-repeat center;
+	background-size: cover;
+	padding-bottom: 300px;
+	@media screen and (max-width: $phone) {
+		align-items: flex-start;
+		flex-direction: column;
+		height: auto;
+	}
+	&__link {
+		color: $black;
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+		transition: border-bottom .4s ease;
+		&:hover {
+			border-bottom: 1px solid $black;
+		}
+	}
+	&__card {
+		width: 380px;
+		background: rgba(#f4f5f0, .85);
+		color: $black;
+		border-radius: 5px;
+		padding: 40px;
+		z-index: 1;
+		@media screen and (max-width: $phone){
+			width: 100%;
+			border-radius: 0;
+		}
+		
+	}
+	&__title::after {
+		bottom: -10px;
+	}
+	.contacts__list-wrapper {
+		margin-top: 30px;
+	}
+	&__icon {
+		max-height: 25px;
+		max-width: 22px;
+		margin-right: 15px;
+		fill: #6c9c5a;
+	}
+	&__item {
+		list-style-type: none;
+		display: inline-flex;
+		align-items: center;
+		width: 100%;
+		margin-top: 15px;
+	}
+}
+.mobile-height {
+	@media screen and (max-width: $phone) {
+		display: block;
+		width: 100%;
+		height: 90vh;
+		background: transparent;
+	}
+}

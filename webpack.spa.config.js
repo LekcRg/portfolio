@@ -8,7 +8,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist/admin"),
-    filename: "[name].bundle.js"
+    filename: "[name].bundle.js",
+    publicPath: "/admin/"
   },
   module: {
     rules: [
@@ -56,6 +57,7 @@ module.exports = {
     extensions: ["*", ".js", ".vue", ".json"]
   },
   devServer: {
+    port: 3000,
     historyApiFallback: true,
     noInfo: false,
     overlay: true

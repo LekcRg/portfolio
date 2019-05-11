@@ -1,0 +1,7 @@
+script(type='text/x-template')#post
+	.blog__news
+		article.blog-post(v-for='post in posts')
+			header.blog-post__header
+				h2.blog-post__title {{post.title}}
+				time.blog-post__date {{post.created_at}}
+				p {{post.content}}
